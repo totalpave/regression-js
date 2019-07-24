@@ -5,9 +5,10 @@
     "Tom Alexander <me@tomalexander.co.nz>",
     "Misha Wolfson <misha@ginkgobioworks.com>"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "./dist/regression.js",
+  "typings": "./dist/typings.d.ts",
   "repository": "Tom-Alexander/regression-js",
   "keywords": [
     "regression",
@@ -18,9 +19,9 @@
   ],
   "scripts": {
     "clean": "rm -rf dist && mkdir dist",
-    "lint": "./node_modules/.bin/eslint src/** tests/**",
+    "lint": "./node_modules/.bin/eslint src/**/*.js tests/**/*.js",
     "test": "npm run lint && ./node_modules/.bin/nyc --reporter=lcov ./node_modules/.bin/mocha --compilers js:babel-core/register",
-    "build": "npm run clean && npm run build-regression-js && npm run build-regression-min-js",
+    "build": "npm run clean && npm run build-regression-js && npm run build-regression-min-js && cp ./src/typings.d.ts ./dist/typings.d.ts",
     "build-regression-js": "BABEL_ENV=production ./node_modules/.bin/babel src/regression.js --out-file dist/regression.js",
     "build-regression-min-js": " ./node_modules/.bin/uglifyjs dist/regression.js --output dist/regression.min.js"
   },
