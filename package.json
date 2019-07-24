@@ -1,11 +1,11 @@
 {
-  "name": "regression",
+  "name": "@totalpave/regression",
   "description": "Javascript least squares data fitting methods",
   "contributors": [
     "Tom Alexander <me@tomalexander.co.nz>",
     "Misha Wolfson <misha@ginkgobioworks.com>"
   ],
-  "version": "2.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "./dist/regression.js",
   "repository": "Tom-Alexander/regression-js",

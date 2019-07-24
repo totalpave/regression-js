@@ -19,8 +19,9 @@ describe('models', () => {
         const example = models[model][name];
         describe(name, () => {
           it(`correctly predicts ${name}`, () => {
-            let result = regression[model](example.data, example.config);
+            const result = regression[model](example.data, example.config);
             delete result.predict;
+            delete result.serialize;
             expect(result).to.deep.equal({
               r2: example.r2,
               string: example.string,
@@ -43,5 +44,27 @@ describe('models', () => {
         });
       });
     });
+  });
+});
+
+describe('can serialize', () => {
+  it('Polynomial', () => {
+    const result = regression.polynomial([
+      [0, 100],
+      [1, 96],
+      [2, 92],
+      [6, 75],
+      [7, 63],
+    ]);
+
+    const serialized = result.serialize();
+    const parsed = regression.parse(serialized);
+
+    delete parsed.predict;
+    delete parsed.serialize;
+    delete result.predict;
+    delete result.serialize;
+
+    expect(parsed).to.deep.equal(result);
   });
 });

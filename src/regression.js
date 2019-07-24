@@ -298,13 +298,34 @@ const methods = {
       }
     }
 
+    const r2 = round(determinationCoefficient(data, points), options.precision);
+    const equation = [...coefficients].reverse();
+
     return {
       string,
       points,
       predict,
-      equation: [...coefficients].reverse(),
-      r2: round(determinationCoefficient(data, points), options.precision),
+      equation,
+      r2,
+      serialize: () => {
+        const obj = {
+          type: 'polynomial',
+          coefficients,
+          options,
+          r2,
+          string,
+          points,
+          equation,
+          data,
+        };
+        return JSON.stringify(obj);
+      },
     };
+  },
+
+  parse(serialized) {
+    const s = JSON.parse(serialized);
+    return methods[s.type](s.data, s.options);
   },
 };
 

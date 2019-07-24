@@ -358,13 +358,33 @@
         }
       }
 
+      var r2 = round(determinationCoefficient(data, points), options.precision);
+      var equation = [].concat(_toConsumableArray(coefficients)).reverse();
+
       return {
         string: string,
         points: points,
         predict: predict,
-        equation: [].concat(_toConsumableArray(coefficients)).reverse(),
-        r2: round(determinationCoefficient(data, points), options.precision)
+        equation: equation,
+        r2: r2,
+        serialize: function serialize() {
+          var obj = {
+            type: 'polynomial',
+            coefficients: coefficients,
+            options: options,
+            r2: r2,
+            string: string,
+            points: points,
+            equation: equation,
+            data: data
+          };
+          return JSON.stringify(obj);
+        }
       };
+    },
+    parse: function parse(serialized) {
+      var s = JSON.parse(serialized);
+      return methods[s.type](s.data, s.options);
     }
   };
 
