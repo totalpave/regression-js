@@ -37,7 +37,7 @@ export class PolynomialFit extends FittingStrategy {
         rhs.push(lhs);
 
         const coefficients: Array<number> = gaussianElimination(rhs, k).map(v => round(v, options.precision));
-        return coefficients;
+        return coefficients.reverse();
     }
 }
 

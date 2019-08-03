@@ -4,7 +4,14 @@ import round from "../utils/round";
 
 export class ExponentialFit extends FittingStrategy {
     protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        const sum: Array<number> = [0, 0, 0, 0, 0, 0];
+        const sum: Array<number> = [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ];
 
         for (let n: number = 0; n < data.length; n++) {
             if (data[n][1] !== null) {

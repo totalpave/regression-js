@@ -4,7 +4,13 @@ import round from "../utils/round";
 
 export class LogarithmicFit extends FittingStrategy {
     protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        const sum: Array<number> = [0, 0, 0, 0];
+        const sum: Array<number> = [
+            0,
+            0,
+            0,
+            0
+        ];
+        
         const len: number = data.length;
 
         for (let n: number = 0; n < len; n++) {

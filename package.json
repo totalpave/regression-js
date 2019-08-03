@@ -1,37 +1,56 @@
 {
-  "name": "@totalpave/regression",
-  "description": "Javascript least squares data fitting methods",
-  "contributors": [
-    "Tom Alexander <me@tomalexander.co.nz>",
-    "Misha Wolfson <misha@ginkgobioworks.com>"
-  ],
-  "version": "2.0.0-dev",
-  "license": "MIT",
-  "main": "./dist/regression.js",
-  "typings": "./dist/typings.d.ts",
-  "repository": "Tom-Alexander/regression-js",
-  "keywords": [
-    "regression",
-    "data",
-    "fiting",
-    "modeling",
-    "analysis"
-  ],
-  "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
-    "lint": "./node_modules/.bin/eslint src/**/*.js tests/**/*.js",
-    "test": "npm run lint && ./node_modules/.bin/nyc --reporter=lcov ./node_modules/.bin/mocha --compilers js:babel-core/register",
-    "build": "npm run clean && npm run build-regression-js && npm run build-regression-min-js && cp ./src/typings.d.ts ./dist/typings.d.ts",
-    "build-regression-js": "BABEL_ENV=production ./node_modules/.bin/babel src/regression.js --out-file dist/regression.js",
-    "build-regression-min-js": " ./node_modules/.bin/uglifyjs dist/regression.js --output dist/regression.min.js"
-  },
-  "devDependencies": {
-    "@totalpave/eslint-plugin": "^1.0.9",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^6.1.0",
-    "nyc": "^14.1.1",
-    "typescript": "^3.5.3"
-  },
-  "author": "Tom Alexander <me@tomalexander.co.nz>"
+    "name": "@totalpave/regression",
+    "description": "Javascript least squares data fitting methods",
+    "contributors": [
+        {
+            "name": "Norman Breau",
+            "email": "norman.breau@totalpave.com"
+        }
+    ],
+    "version": "2.0.0-dev",
+    "license": "MIT",
+    "main": "./lib/api.js",
+    "typings": "./lib/api.d.ts",
+    "homepage": "https://github.com/totalpave/regression-js#readme",
+    "repository": "Tom-Alexander/regression-js",
+    "keywords": [
+        "regression",
+        "data",
+        "fiting",
+        "modeling",
+        "analysis"
+    ],
+    "nyc": {
+        "check-coverage": true,
+        "per-file": true,
+        "include": "src/**/*.ts",
+        "extension": [
+            ".ts"
+        ]
+    },
+    "scripts": {
+        "clean": "git clean -fdx -e node_modules",
+        "lint": "eslint --ext ts 'src/**/*.ts' && eslint --ext ts 'spec/**/*.ts'",
+        "test": "npm run lint && nyc --reporter=lcov --reporter=text ts-node spec/support/jasmine.ts",
+        "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
+        "prepublish": "npm run clean && npm run build && npm test"
+    },
+    "devDependencies": {
+        "@totalpave/eslint-plugin": "^1.0.9",
+        "@types/jasmine": "^3.3.16",
+        "@typescript-eslint/eslint-plugin": "^1.13.0",
+        "@typescript-eslint/parser": "^1.13.0",
+        "eslint": "^6.1.0",
+        "eslint-config-prettier": "^6.0.0",
+        "jasmine": "^3.4.0",
+        "jasmine-spec-reporter": "^4.2.1",
+        "nyc": "^14.1.1",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.5.3"
+    },
+    "author": "Tom Alexander <me@tomalexander.co.nz>",
+    "dependencies": {
+        "@types/node": "^12.6.9",
+        "tslib": "^1.10.0"
+    }
 }
