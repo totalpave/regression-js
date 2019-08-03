@@ -1,28 +1,23 @@
-import Regression from "../Regression";
-import { Serializable } from "../utils/Serializable";
+import {Regression} from "../Regression";
 import round from "../utils/round";
 import IOptions from "../IOptions";
 import FittingStrategy from "../fitting/FittingStrategy";
 import PolynomialFit from "../fitting/PolynomialFit";
+import RegressionType from '../utils/RegressionType';
 
 export class Polynomial extends Regression {
-
-    protected _serialize(): Serializable {
-        return {};
-    }
-
     protected _predict(x: number): Array<number> {
         return [
             round(x, this.getOptions().precision),
             round(
-                this.getCoefficients().reduce((sum, coeff, power) => sum + (coeff * (x ** power)), 0),
+                this.getCoefficients().reverse().reduce((sum, coeff, power) => sum + (coeff * (x ** power)), 0),
                 this.getOptions().precision,
-            ),
+            )
         ];
     }
 
     public getEquation(): string {
-        const coefficients: Array<number> = this.getCoefficients();
+        const coefficients: Array<number> = this.getCoefficients().reverse();
         let string: string = 'y = ';
         for (let i: number = coefficients.length - 1; i >= 0; i--) {
             if (i > 1) {
@@ -43,10 +38,10 @@ export class Polynomial extends Regression {
     }
 
     public static getType(): string {
-        return 'Polynomial';
+        return RegressionType.POLYNOMIAL;
     }
 
-    public getFittingStrategy(options: IOptions): FittingStrategy {
+    public static getFittingStrategy(options: IOptions): FittingStrategy {
         return new PolynomialFit(options);
     }
 }

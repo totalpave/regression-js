@@ -1,7 +1,22 @@
 {
-  "extends": "airbnb-base",
-  "rules": {
-    "import/prefer-default-export": 0,
-    "no-plusplus": 0
+  "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "prettier/@typescript-eslint",
+      "plugin:@totalpave/recommendedTS"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "project": "./tsconfig.json"
   },
+  "plugins": [
+      "@typescript-eslint",
+      "@totalpave"
+  ],
+  "env": {
+      "node": true,
+      "jasmine": true
+  }
 }

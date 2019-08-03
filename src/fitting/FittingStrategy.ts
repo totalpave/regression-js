@@ -5,11 +5,10 @@ export abstract class FittingStrategy {
     private _options: IOptions;
 
     public constructor(options?: IOptions) {
-        if (!options) {
-            options = DEFAULT_OPTIONS;
-        }
-
-        this._options = options;
+        this._options = {
+            ...DEFAULT_OPTIONS,
+            ...options
+        };
     }
 
     protected abstract _fit(data: Array<Array<number>>, options: IOptions): Array<number>;
