@@ -1,4 +1,4 @@
-import {Regression} from 'src/Regression';
+import {Regression} from '../Regression';
 import round from './round';
 import determineCoefficients from './determineCoefficients';
 
