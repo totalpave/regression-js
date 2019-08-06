@@ -1,3 +1,6 @@
+# 2.0.1
+- Fixed r2 import
+
 # 2.0.0
 ## Breaking Changes
 - This library is now only a Node library. Will not work on browsers.
