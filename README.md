@@ -1,5 +1,5 @@
 
-# @totalave/regression
+# @totalpave/regression
 
 This module was forked from [regression-js](https://github.com/Tom-Alexander/regression-js). Props to Tom Alexander for making this great library.
 
