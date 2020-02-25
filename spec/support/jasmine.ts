@@ -1,5 +1,5 @@
 
-import Jasmine = require('jasmine');
+import Jasmine = require('@breautek/jasmine');
 import {SpecReporter} from 'jasmine-spec-reporter';
 
 var jasmine = new Jasmine(null);
@@ -17,7 +17,7 @@ const config: any = {
 };
 
 jasmine.env.clearReporters();
-jasmine.addReporter(new SpecReporter());
+jasmine.addReporter(<any>(new SpecReporter()));
 
 jasmine.loadConfig(config);
 
