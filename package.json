@@ -45,7 +45,7 @@
         "jasmine-spec-reporter": "4.2.1",
         "nyc": "15.0.0",
         "ts-node": "8.3.0",
-        "typescript": "3.5.3"
+        "typescript": "3.8.2"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
