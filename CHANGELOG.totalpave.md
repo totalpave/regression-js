@@ -1,3 +1,6 @@
+# 2.0.2-dev
+- IE11 support
+
 # 2.0.1
 - Fixed r2 import
 
