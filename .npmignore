@@ -2,7 +2,6 @@
 example/
 .DS_Store
 spec
-src
 .eslintrc
 tsconfig.json
 coverage
