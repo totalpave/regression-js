@@ -50,6 +50,6 @@
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
         "@types/node": "12.12.28",
-        "tslib": "1.10.0"
+        "tslib": "1.11.0"
     }
 }
