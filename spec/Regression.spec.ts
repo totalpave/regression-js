@@ -6,10 +6,7 @@ import Logarithmic from "../src/regressions/Logarithmic";
 import Power from "../src/regressions/Power";
 
 describe('Regression', () => {
-    let regression: Linear = new Linear([
-        1,
-        2
-    ]);
+    let regression: Linear = new Linear([ 1, 2 ]);
 
     it('can serialize', () => {
         expect(regression.serialize()).toBe('{"type":"Linear","coefficients":[1,2],"options":{"order":2,"precision":2,"period":null}}');
@@ -17,14 +14,8 @@ describe('Regression', () => {
 
     it('can set coefficients', () => {
         let regression: Linear = new Linear([]);
-        regression.setCoefficients([
-            2,
-            4
-        ]);
-        expect(regression.getCoefficients()).toEqual([
-            2,
-            4
-        ]);
+        regression.setCoefficients([ 2, 4 ]);
+        expect(regression.getCoefficients()).toEqual([ 2, 4 ]);
     });
 
     it('toString', () => {
@@ -32,27 +23,12 @@ describe('Regression', () => {
     });
 
     it('getFitAccuracy', () => {
-        let regression: Linear = new Linear([
-            2,
-            0
-        ]);
+        let regression: Linear = new Linear([ 2, 0 ]);
         expect(regression.getFitAccuracy([
-            [
-                0,
-                0
-            ],
-            [
-                1,
-                2
-            ],
-            [
-                2,
-                4
-            ],
-            [
-                3,
-                6
-            ]
+            [ 0, 0 ],
+            [ 1, 2 ],
+            [ 2, 4 ],
+            [ 3, 6 ]
         ])).toBe(1);
     });
 

@@ -29,10 +29,7 @@ export class ExponentialFit extends FittingStrategy {
         const b: number = ((sum[1] * sum[4]) - (sum[5] * sum[3])) / denominator;
         const coeffA: number = round(a, options.precision);
         const coeffB: number = round(b, options.precision);
-        return [
-            coeffA,
-            coeffB
-        ];
+        return [ coeffA, coeffB ];
     }
 }
 

@@ -25,10 +25,7 @@ export class LogarithmicFit extends FittingStrategy {
         const a: number = ((len * sum[1]) - (sum[2] * sum[0])) / ((len * sum[3]) - (sum[0] * sum[0]));
         const coeffB: number = round(a, options.precision);
         const coeffA: number = round((sum[2] - (coeffB * sum[0])) / len, options.precision);
-        return [
-            coeffA,
-            coeffB
-        ];
+        return [ coeffA, coeffB ];
     }
 }
 

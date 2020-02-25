@@ -11,10 +11,7 @@ export class Linear extends Regression {
         const gradient: number = this.getCoefficientAt(0);
         const intercept: number = this.getCoefficientAt(1);
         const options: IOptions = this.getOptions();
-        return [
-            round(x, options.precision),
-            round((gradient * x) + intercept, options.precision)
-        ];
+        return [ round(x, options.precision), round((gradient * x) + intercept, options.precision) ];
     }
 
     public getEquation(): string {

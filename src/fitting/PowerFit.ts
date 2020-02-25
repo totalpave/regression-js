@@ -28,10 +28,7 @@ export class PowerFit extends FittingStrategy {
         const coeffA = round(Math.exp(a), options.precision);
         const coeffB = round(b, options.precision);
 
-        return [
-            coeffA,
-            coeffB
-        ];
+        return [ coeffA, coeffB ];
     }
 }
 

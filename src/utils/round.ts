@@ -11,6 +11,6 @@
 export function round(number: number, precision: number): number {
     const factor: number = 10 ** precision;
     return Math.round(number * factor) / factor;
-};
+}
 
 export default round;

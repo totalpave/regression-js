@@ -29,10 +29,7 @@ export class LinearFit extends FittingStrategy {
         const gradient: number = run === 0 ? 0 : round(rise / run, options.precision);
         const intercept: number = round((sum[1] / len) - ((gradient * sum[0]) / len), options.precision);
 
-        return [
-            gradient,
-            intercept
-        ];
+        return [ gradient, intercept ];
     }
 }
 

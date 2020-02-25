@@ -14,10 +14,7 @@ export class Exponential extends Regression {
         const options: IOptions = this.getOptions();
         const coeffA: number = this.getCoefficientAt(0);
         const coeffB: number = this.getCoefficientAt(1);
-        return [
-            round(x, options.precision),
-            round(coeffA * Math.exp(coeffB * x), options.precision)
-        ];
+        return [ round(x, options.precision), round(coeffA * Math.exp(coeffB * x), options.precision) ];
     }
 
     public getEquation(): string {

@@ -10,7 +10,7 @@
 export function gaussianElimination(input: Array<Array<number>>, order: number): Array<number> {
     const matrix: Array<Array<number>> = input;
     const n: number = input.length - 1;
-    const coefficients: Array<number> = [order];
+    const coefficients: Array<number> = [ order ];
   
     for (let i: number = 0; i < n; i++) {
         let maxrow: number = i;
