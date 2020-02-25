@@ -12,7 +12,7 @@
     "main": "./lib/api.js",
     "typings": "./lib/api.d.ts",
     "homepage": "https://github.com/totalpave/regression-js#readme",
-    "repository": "Tom-Alexander/regression-js",
+    "repository": "totalpave/regression-js",
     "keywords": [
         "regression",
         "data",
