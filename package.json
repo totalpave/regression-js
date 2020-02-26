@@ -33,13 +33,15 @@
         "lint": "eslint --ext ts 'src/**/*.ts' && eslint --ext ts 'spec/**/*.ts'",
         "test": "npm run lint && nyc --reporter=lcov --reporter=text ts-node spec/support/jasmine.ts",
         "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
-        "prepublish": "npm run clean && npm run build && npm test"
+        "prepublish": "npm run clean && npm run build && npm test",
+	"changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore"
     },
     "devDependencies": {
         "@breautek/jasmine": "3.5.1",
         "@totalpave/eslint-plugin": "2.3.3",
         "@typescript-eslint/eslint-plugin": "2.21.0",
         "@typescript-eslint/parser": "2.21.0",
+        "auto-changelog": "1.16.2",
         "eslint": "6.8.0",
         "eslint-config-prettier": "6.10.0",
         "jasmine-spec-reporter": "4.2.1",
