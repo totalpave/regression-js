@@ -16,6 +16,27 @@ export class Polynomial extends Regression {
         ];
     }
 
+    protected _derivative(x: number): number {
+        let coeffs: Array<number> = this.getCoefficients().reverse();
+        let result: number = 0;
+
+        for (let i: number = 1; i < coeffs.length; i++) {
+            let coeff: number = coeffs[i];
+            
+            if (i === 1) {
+                result += i * coeff;
+            }
+            else if (i === 2) {
+                result += i * coeff * x
+            }
+            else {
+                result += i * coeff * Math.pow(x, i - 1);
+            }
+        }
+
+        return result;
+    }
+
     public getEquation(): string {
         const coefficients: Array<number> = this.getCoefficients().reverse();
         let string: string = 'y = ';

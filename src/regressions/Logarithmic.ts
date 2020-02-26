@@ -25,6 +25,17 @@ export class Logarithmic extends Regression {
     public static getFittingStrategy(options: IOptions): FittingStrategy {
         return new LogarithmicFit(options);
     }
+
+    protected _derivative(x: number): number {
+        if (x <= 0) {
+            return null;
+        }
+
+        let c1: number = this.getCoefficientAt(0);
+        let c2: number = this.getCoefficientAt(1);
+
+        return c2 * (1 / x) + c1;
+    }
 }
 
 export default Logarithmic;

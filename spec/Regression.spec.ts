@@ -1,9 +1,12 @@
 import Linear from "../src/regressions/Linear";
+// import {Regression} from '../src/Regression';
+import {RegressionFactory, IBestFitResult} from '../src/RegressionFactory';
 import RegressionType from "../src/utils/RegressionType";
 import Exponential from "../src/regressions/Exponential";
 import { Polynomial } from "../src/regressions/Polynomial";
 import Logarithmic from "../src/regressions/Logarithmic";
 import Power from "../src/regressions/Power";
+import * as models from './support/data';
 
 describe('Regression', () => {
     let regression: Linear = new Linear([ 1, 2 ]);
@@ -56,6 +59,35 @@ describe('Regression', () => {
         it('Power', () => {
             expect(Power.getType()).toBe(RegressionType.POWER);
             expect(new Power([]).getType()).toBe(Power.getType());
+        });
+    });
+
+    describe('derivatives', () => {
+        let factory: RegressionFactory = new RegressionFactory();
+
+        it('Linear', () => {
+            let fitted: IBestFitResult = factory.bestFit(RegressionType.LINEAR, models.Linear.positiveGradient.data);
+            expect(fitted.regression.derivative()).toBe(2);
+        });
+
+        it('Exponential', () => {
+            let fitted: IBestFitResult = factory.bestFit(RegressionType.EXPONENTIAL, models.Exponential.growthGreaterThanZero.data);
+            expect(fitted.regression.derivative()).toBe(4);
+        });
+
+        it('Polynomial', () => {
+            let fitted: IBestFitResult = factory.bestFit(RegressionType.POLYNOMIAL, models.Polynomial.parabolaPositiveCoefficients.data);
+            expect(fitted.regression.derivative()).toBe(2);
+        });
+
+        it('Logarithmic', () => {
+            let fitted: IBestFitResult = factory.bestFit(RegressionType.LOGARITHMIC, models.Logarithmic.greaterThanOne.data);
+            expect(fitted.regression.derivative(1)).toBe(10);
+        });
+
+        it('Power', () => {
+            let fitted: IBestFitResult = factory.bestFit(RegressionType.POWER, models.Power.coefficientsEqualToOne.data);
+            expect(fitted.regression.derivative(1)).toBe(1);
         });
     });
 });

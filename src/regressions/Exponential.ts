@@ -32,6 +32,12 @@ export class Exponential extends Regression {
     public static getFittingStrategy(options: IOptions): FittingStrategy {
         return new ExponentialFit(options);
     }
+
+    protected _derivative(x: number): number {
+        let constant: number = this.getCoefficientAt(0);
+        let exponent: number = this.getCoefficientAt(1);
+        return constant * Math.pow(Math.E, exponent * x) * exponent;
+    }
 }
 
 export default Exponential;

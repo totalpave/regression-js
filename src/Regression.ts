@@ -18,6 +18,11 @@ export abstract class Regression {
     protected abstract _predict(x: number): Array<number>;
     public abstract getType(): string;
     public abstract getEquation(): string;
+    protected abstract _derivative(x: number): number;
+
+    public derivative(x: number = 0) {
+        return this._derivative(x);
+    }
 
     public getOptions(): IOptions {
         return this._options;

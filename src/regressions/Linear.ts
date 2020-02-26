@@ -31,6 +31,10 @@ export class Linear extends Regression {
     public static getFittingStrategy(options: IOptions): FittingStrategy {
         return new LinearFit(options);
     }
+
+    protected _derivative(x: number): number {
+        return (this.solve(x + 1) - this.solve(x)) / 1;
+    }
 }
 
 export default Linear;

@@ -26,6 +26,14 @@ export class Power extends Regression {
     public static getFittingStrategy(options: IOptions): FittingStrategy {
         return new PowerFit(options);
     }
+
+    protected _derivative(x: number): number {
+        console.log('COES', this.getCoefficients());
+        console.log(this.getEquation());
+        let c1: number = this.getCoefficientAt(0);
+        let c2: number = this.getCoefficientAt(1);
+        return c1 * (c2 * Math.pow(x, c2 - 1));
+    }
 }
 
 export default Power;
