@@ -34,7 +34,7 @@
         "test": "npm run lint && nyc --reporter=lcov --reporter=text ts-node spec/support/jasmine.ts",
         "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
         "prepublish": "npm run clean && npm run build && npm test",
-	"changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore"
+        "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore"
     },
     "devDependencies": {
         "@breautek/jasmine": "3.5.1",
@@ -47,11 +47,11 @@
         "jasmine-spec-reporter": "4.2.1",
         "nyc": "15.0.0",
         "ts-node": "8.6.2",
-        "typescript": "3.8.2"
+        "typescript": "3.8.2",
+        "tslib": "1.11.0"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
-        "@types/node": "12.12.28",
-        "tslib": "1.11.0"
+        "@types/node": "12.12.28"
     }
 }
