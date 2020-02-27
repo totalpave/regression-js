@@ -36,6 +36,16 @@ export class Logarithmic extends Regression {
 
         return c2 * (1 / x) + c1;
     }
+
+    protected _clone(): Logarithmic {
+        return new Logarithmic(this.getCoefficients(), this.getOptions());
+    }
+
+    protected _findX(y: number): number {
+        let constant: number = this.getCoefficientAt(0);
+        let log: number = this.getCoefficientAt(1);
+        return Math.pow(Math.E, (y - constant) / log);
+    }
 }
 
 export default Logarithmic;

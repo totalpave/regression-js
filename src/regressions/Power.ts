@@ -32,6 +32,16 @@ export class Power extends Regression {
         let c2: number = this.getCoefficientAt(1);
         return c1 * (c2 * Math.pow(x, c2 - 1));
     }
+
+    protected _clone(): Power {
+        return new Power(this.getCoefficients(), this.getOptions());
+    }
+
+    protected _findX(y: number): number {
+        let constant: number = this.getCoefficientAt(0);
+        let exponent: number = this.getCoefficientAt(1);
+        return Math.pow(y / constant, 1 / exponent);
+    }
 }
 
 export default Power;

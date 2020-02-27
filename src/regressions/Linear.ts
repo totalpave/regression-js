@@ -35,6 +35,16 @@ export class Linear extends Regression {
     protected _derivative(x: number): number {
         return (this.solve(x + 1) - this.solve(x)) / 1;
     }
+
+    protected _clone(): Linear {
+        return new Linear(this.getCoefficients(), this.getOptions());
+    }
+
+    protected _findX(y: number): number {
+        let c1: number = this.getCoefficientAt(0);
+        let c2: number = this.getCoefficientAt(1);
+        return (y - c2) / c1;
+    }
 }
 
 export default Linear;

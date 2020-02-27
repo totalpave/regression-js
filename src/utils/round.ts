@@ -1,3 +1,5 @@
+import Math from '@totalpave/math';
+
 /**
 * Round a number to a precision, specificed in number of decimal places
 *
@@ -9,8 +11,9 @@
 * @return {numbr} - The number, rounded
 */
 export function round(number: number, precision: number): number {
-    const factor: number = 10 ** precision;
-    return Math.round(number * factor) / factor;
+    return Math.round(number, precision);
+    // const factor: number = 10 ** precision;
+    // return Math.round(number * factor) / factor;
 }
 
 export default round;

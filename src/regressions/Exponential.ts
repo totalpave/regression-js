@@ -38,6 +38,16 @@ export class Exponential extends Regression {
         let exponent: number = this.getCoefficientAt(1);
         return constant * Math.pow(Math.E, exponent * x) * exponent;
     }
+
+    protected _clone(): Exponential {
+        return new Exponential(this.getCoefficients(), this.getOptions());
+    }
+
+    protected _findX(y: number): number {
+        let constant: number = this.getCoefficientAt(0);
+        let exponent: number = this.getCoefficientAt(1);
+        return (Math.log(y / constant) / Math.log(Math.E) / exponent);
+    }
 }
 
 export default Exponential;

@@ -17,6 +17,7 @@ export interface IBestFitResult {
 }
 
 export class RegressionFactory {
+
     public constructor() {}
 
     public create(type: RegressionType, coefficients: Array<number>, options?: IOptions): Regression {

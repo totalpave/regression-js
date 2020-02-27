@@ -48,11 +48,14 @@
         "jasmine-spec-reporter": "4.2.1",
         "nyc": "15.0.0",
         "ts-node": "8.6.2",
-        "typescript": "3.8.2",
-        "tslib": "1.11.0"
+        "typescript": "3.8.2"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
-        "@types/node": "12.12.28"
+        "@totalpave/interfaces": "1.0.0",
+        "@totalpave/math": "0.1.0",
+        "@totalpave/object": "0.0.3",
+        "@types/node": "12.12.28",
+        "tslib": "1.11.0"
     }
 }

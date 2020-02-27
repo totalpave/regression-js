@@ -2,30 +2,49 @@ import IOptions from "./IOptions";
 import { DEFAULT_OPTIONS } from "./utils/defaults";
 import round from "./utils/round";
 import determineCoefficients from "./utils/determineCoefficients";
+import {
+    ISerializable,
+    ICloneable,
+    ObjectUtils,
+    IDictionary
+} from '@totalpave/object';
+// import {RegressionFactory} from './RegressionFactory';
+// import Math from '@totalpave/math';
 
-export abstract class Regression {
+export abstract class Regression implements ISerializable, ICloneable<Regression> {
     private _coefficients: Array<number>;
     private _options: IOptions;
 
     public constructor(coefficients: Array<number>, options?: IOptions) {
         this._options = {
             ...DEFAULT_OPTIONS,
+            ...this._applyOptionDefaults(),
             ...options
         };
         this._coefficients = coefficients;
+    }
+
+    protected _applyOptionDefaults(): IDictionary {
+        return {};
     }
 
     protected abstract _predict(x: number): Array<number>;
     public abstract getType(): string;
     public abstract getEquation(): string;
     protected abstract _derivative(x: number): number;
+    protected abstract _findX(y: number): number;
+
+    protected abstract _clone(): Regression;
+    public clone(): Regression {
+        return this._clone();
+    }
 
     public derivative(x: number = 0) {
         return this._derivative(x);
     }
 
     public getOptions(): IOptions {
-        return this._options;
+        return ObjectUtils.clone(this._options);
     }
 
     public setCoefficients(coeffs: Array<number>): void {
@@ -42,6 +61,42 @@ export abstract class Regression {
 
     public solve(x: number): number {
         return this._predict(x)[1];
+    }
+
+    public findY(x: number): number {
+        return this.solve(x);
+    }
+
+    public findX(y: number): number {
+        return this._findX(y);
+        // interface IXS {
+        //     age: number;
+        //     value: number;
+        // }
+
+        // let result: number = Infinity;
+        // let xs: Array<IXS> = [];
+
+        // for (let i: number = x; i >= 0; i = i - step) {
+        //     xs.unshift({
+        //         age: i,
+        //         value: this.solve(i)
+        //     });
+        // }
+
+        // let resultAge: number = null;
+        // for (let i: number = 0; i < xs.length; i++) {
+        //     let xsi: IXS = xs[i];
+        //     let r: number = Math.abs(xsi.value - y);
+        //     if (r < result) {
+        //         result = r;
+        //         resultAge = xsi.age;
+        //     }
+        // }
+
+        // console.log('RESULT AGE', resultAge);
+
+        // return Math.round(resultAge, 2);
     }
 
     public serialize(): string {
