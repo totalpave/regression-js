@@ -35,7 +35,7 @@
         "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
         "prepublish": "npm run clean && npm run build && npm test",
         "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
-        "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog' && git push && git push --tags"
+        "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog' && sleep 1 && git push && git push --tags"
     },
     "devDependencies": {
         "@breautek/jasmine": "3.5.1",
