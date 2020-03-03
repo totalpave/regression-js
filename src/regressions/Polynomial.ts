@@ -99,7 +99,6 @@ export class Polynomial extends Regression {
             range.high = range.low;
             range.low = t;
         }
-
         return this._findX(y, range);
     }
 

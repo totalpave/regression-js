@@ -82,13 +82,6 @@ describe('Regression', () => {
                     -8,
                     12
                 ]);
-                // fitted.regression.setCoefficients([
-                //     1,
-                //     2,
-                //     -7,
-                //     -8,
-                //     12
-                // ]);
                 expect(fitted.regression.findX(12)).toBe(0);
                 expect(fitted.regression.findX(3)).toBe(null);
                 expect(fitted.regression.findX(14)).toBe(1.3538893678645232);
