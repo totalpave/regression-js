@@ -2,6 +2,7 @@
 import RegressionFactory from '../src/RegressionFactory';
 import {Regression} from '../src/Regression';
 import RegressionType from '../src/utils/RegressionType';
+import { Linear } from '../src/regressions/Linear';
 
 describe('RegressionFactory', () => {
     let factory: RegressionFactory = new RegressionFactory();
@@ -14,13 +15,13 @@ describe('RegressionFactory', () => {
 
     it('bestFit "blah" should throw', () => {
         expect(() => {
-            factory.bestFit(<RegressionType>'blah', []);
+            factory.bestFit<Linear>(<RegressionType>'blah', []);
         }).toThrow();
     });
 
     describe('can create', () => {
         it('Linear', () => {
-            let regression: Regression = factory.create(RegressionType.LINEAR, [ 0, 2 ]);
+            let regression: Linear = factory.create<Linear>(RegressionType.LINEAR, [ 0, 2 ]);
             expect(regression.solve(0)).toBe(2);
         });
 

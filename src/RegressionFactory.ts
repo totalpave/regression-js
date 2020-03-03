@@ -11,8 +11,8 @@ import {Polynomial} from './regressions/Polynomial';
 import {Power} from './regressions/Power';
 import {ISerializedRegression} from './utils/ISerializedRegression';
 
-export interface IBestFitResult {
-    regression: Regression;
+export interface IBestFitResult<T extends Regression = Regression> {
+    regression: T;
     r2: number;
 }
 
@@ -20,8 +20,8 @@ export class RegressionFactory {
 
     public constructor() {}
 
-    public create(type: RegressionType, coefficients: Array<number>, options?: IOptions): Regression {
-        let regression: Regression = null;
+    public create<T extends Regression = Regression>(type: RegressionType, coefficients: Array<number>, options?: IOptions): T {
+        let regression: any = null;
 
         switch (type) {
             case RegressionType.EXPONENTIAL:
@@ -45,9 +45,9 @@ export class RegressionFactory {
         return regression;
     }
 
-    public bestFit(type: RegressionType, data: Array<Array<number>>, options?: IOptions): IBestFitResult {
+    public bestFit<T extends Regression>(type: RegressionType, data: Array<Array<number>>, options?: IOptions): IBestFitResult<T> {
         let fitting: FittingStrategy = null;
-        let regression: Regression = null;
+        let regression: any = null;
 
         switch (type) {
             case RegressionType.EXPONENTIAL:
@@ -79,9 +79,9 @@ export class RegressionFactory {
         };
     }
 
-    public load(serialized: string): Regression {
+    public load<T extends Regression>(serialized: string): T {
         const serializable: ISerializedRegression = JSON.parse(serialized);
-        return this.create(<RegressionType>serializable.type, <Array<number>>serializable.coefficients, <IOptions>serializable.options);
+        return this.create<T>(<RegressionType>serializable.type, <Array<number>>serializable.coefficients, <IOptions>serializable.options);
     }
 
     private throwNotBuildable(type: RegressionType): void {
