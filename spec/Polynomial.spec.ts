@@ -14,7 +14,6 @@ describe('Polynomial', () => {
                 high: 35
             }
         });
-        console.log(p.getEquation());
         expect(p.findX(100)).toBe(0);
     });
 });
