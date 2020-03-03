@@ -14,11 +14,11 @@ export class Logarithmic extends Regression {
         return `y = ${this.getCoefficientAt(0)} + ${this.getCoefficientAt(1)} ln(x)`
     }
 
-    public getType(): string {
+    public getType(): RegressionType {
         return Logarithmic.getType();
     }
 
-    public static getType(): string {
+    public static getType(): RegressionType {
         return RegressionType.LOGARITHMIC;
     }
 

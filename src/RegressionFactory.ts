@@ -2,7 +2,6 @@
 import {Regression} from './Regression';
 import IOptions from './IOptions';
 import FittingStrategy from './fitting/FittingStrategy';
-import ISerializable from './utils/ISerializable';
 import r2 from './utils/r2';
 import RegressionType from './utils/RegressionType';
 import {Exponential} from './regressions/Exponential';
@@ -10,6 +9,7 @@ import {Linear} from './regressions/Linear';
 import {Logarithmic} from './regressions/Logarithmic';
 import {Polynomial} from './regressions/Polynomial';
 import {Power} from './regressions/Power';
+import {ISerializedRegression} from './utils/ISerializedRegression';
 
 export interface IBestFitResult {
     regression: Regression;
@@ -80,7 +80,7 @@ export class RegressionFactory {
     }
 
     public load(serialized: string): Regression {
-        const serializable: ISerializable = JSON.parse(serialized);
+        const serializable: ISerializedRegression = JSON.parse(serialized);
         return this.create(<RegressionType>serializable.type, <Array<number>>serializable.coefficients, <IOptions>serializable.options);
     }
 

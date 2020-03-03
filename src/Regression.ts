@@ -8,8 +8,8 @@ import {
     ObjectUtils,
     IDictionary
 } from '@totalpave/object';
-// import {RegressionFactory} from './RegressionFactory';
-// import Math from '@totalpave/math';
+import {ISerializedRegression} from './utils/ISerializedRegression';
+import {RegressionType} from './utils/RegressionType';
 
 export abstract class Regression implements ISerializable, ICloneable<Regression> {
     private _coefficients: Array<number>;
@@ -29,7 +29,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
     }
 
     protected abstract _predict(x: number): Array<number>;
-    public abstract getType(): string;
+    public abstract getType(): RegressionType;
     public abstract getEquation(): string;
     protected abstract _derivative(x: number): number;
     protected abstract _findX(y: number): number;
@@ -69,38 +69,10 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
 
     public findX(y: number): number {
         return this._findX(y);
-        // interface IXS {
-        //     age: number;
-        //     value: number;
-        // }
-
-        // let result: number = Infinity;
-        // let xs: Array<IXS> = [];
-
-        // for (let i: number = x; i >= 0; i = i - step) {
-        //     xs.unshift({
-        //         age: i,
-        //         value: this.solve(i)
-        //     });
-        // }
-
-        // let resultAge: number = null;
-        // for (let i: number = 0; i < xs.length; i++) {
-        //     let xsi: IXS = xs[i];
-        //     let r: number = Math.abs(xsi.value - y);
-        //     if (r < result) {
-        //         result = r;
-        //         resultAge = xsi.age;
-        //     }
-        // }
-
-        // console.log('RESULT AGE', resultAge);
-
-        // return Math.round(resultAge, 2);
     }
 
     public serialize(): string {
-        let serializable: any = {
+        let serializable: ISerializedRegression = {
             type: this.getType(),
             coefficients: this.getCoefficients(),
             options: this.getOptions()

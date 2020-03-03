@@ -20,11 +20,11 @@ export class Linear extends Regression {
         return intercept === 0 ? `y = ${gradient}x` : `y = ${gradient}x + ${intercept}`;
     }
 
-    public getType(): string {
+    public getType(): RegressionType {
         return Linear.getType();
     }
 
-    public static getType(): string {
+    public static getType(): RegressionType {
         return RegressionType.LINEAR;
     }
 

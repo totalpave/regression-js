@@ -21,11 +21,11 @@ export class Exponential extends Regression {
         return `y = ${this.getCoefficientAt(0)}e^(${this.getCoefficientAt(1)}x)`;
     }
 
-    public getType(): string {
+    public getType(): RegressionType {
         return Exponential.getType();
     }
 
-    public static getType(): string {
+    public static getType(): RegressionType {
         return RegressionType.EXPONENTIAL;
     }
 

@@ -4,7 +4,7 @@ import IOptions from "../IOptions";
 import FittingStrategy from "../fitting/FittingStrategy";
 import PolynomialFit from "../fitting/PolynomialFit";
 import RegressionType from '../utils/RegressionType';
-import { IDictionary } from '@totalpave/object';
+import { IDictionary } from '@totalpave/interfaces';
 import {IRangeOptions} from '../IOptions';
 
 export class Polynomial extends Regression {
@@ -69,11 +69,11 @@ export class Polynomial extends Regression {
         return string;
     }
 
-    public getType(): string {
+    public getType(): RegressionType {
         return Polynomial.getType();
     }
 
-    public static getType(): string {
+    public static getType(): RegressionType {
         return RegressionType.POLYNOMIAL;
     }
 

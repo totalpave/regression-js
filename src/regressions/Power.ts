@@ -15,11 +15,11 @@ export class Power extends Regression {
         return `y = ${this.getCoefficientAt(0)}x^${this.getCoefficientAt(1)}`;
     }
 
-    public getType(): string {
+    public getType(): RegressionType {
         return Power.getType();
     }
 
-    public static getType(): string {
+    public static getType(): RegressionType {
         return RegressionType.POWER;
     }
 
