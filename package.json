@@ -7,7 +7,7 @@
             "email": "norman.breau@totalpave.com"
         }
     ],
-    "version": "3.3.2",
+    "version": "3.3.3",
     "license": "MIT",
     "main": "./lib/api.js",
     "typings": "./lib/api.d.ts",
@@ -50,6 +50,7 @@
         "jasmine-spec-reporter": "4.2.1",
         "nyc": "15.0.0",
         "ts-node": "8.6.2",
+        "typedoc": "0.16.11",
         "typescript": "3.8.2"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
