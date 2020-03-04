@@ -33,9 +33,10 @@
         "lint": "eslint --ext ts 'src/**/*.ts' && eslint --ext ts 'spec/**/*.ts'",
         "test": "npm run lint && nyc --reporter=lcov --reporter=text ts-node spec/support/jasmine.ts",
         "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
+        "build-docs": "typedoc --excludePrivate --excludeNotExported --mode file -readme ./README.md --out ./docs ./src",
         "prepublish": "npm run clean && npm run build && npm test",
         "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
-        "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog'",
+        "version": "npm run build-docs && npm run changelog && git add CHANGELOG.md docs && git commit -m 'chore: release'",
         "postversion": "git push && git push --tags"
     },
     "devDependencies": {
