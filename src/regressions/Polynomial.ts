@@ -140,45 +140,6 @@ export class Polynomial extends Regression {
             
             x = this._newton(initialGuess, coefficients);
         }
-        // let leadingCoefficient: number = coefficients[0];
-        // let constant: number = coefficients[coefficients.length - 1];
-        // let leadingFactors: Array<number> = this._findFactors(leadingCoefficient);
-        // let constantFactors: Array<number> = this._findFactors(constant);
-        // let possibles: Array<number> = this._findPossibles(leadingFactors, constantFactors);
-
-        // let roots: Array<number> = [];
-        // for (let i: number = 0; i < possibles.length; i++) {
-        //     let possible: number = possibles[i];
-        //     if (this.solve(possible) === 0) {
-        //         roots.push(possible);
-        //     }
-        // }
-
-        // console.log('ROOTS', roots);
-        // for (let i: number = 0; i < roots.length; i++) {
-        //     let root: number = roots[i];
-        //     console.log('ROOT', root, this.solve(root + y), this._newtonRaphson(root));
-        // }
-
-        // this uses the quadratic formula, which works
-        // however only for a certain (specifically 3 I believe) number of terms.
-        // More terms requires newton formula
-
-       
-        // coefficients = coefficients.reverse();
-        // let coeMap: IDictionary<number> = {};
-        
-        // let closestCoefficients
-        // for (let i: number = 0; i < coefficients.length; i++) {
-            // coeMap[i] = 0;
-            // let coefficient: number = coefficients[i];
-            // console.log(i, coefficient);
-        // }
-
-        // let shouldBreak: boolean = false;
-        // while (!shouldBreak) {
-            
-        // }
 
         return x;
     }
