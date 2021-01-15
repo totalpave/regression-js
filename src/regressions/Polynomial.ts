@@ -53,7 +53,7 @@ export class Polynomial extends Regression {
     }
 
     public getEquation(): string {
-        const coefficients: Array<number> = this.getCoefficients().reverse();
+        let coefficients: Array<number> = this.getCoefficients().reverse();
         let string: string = 'y = ';
         for (let i: number = coefficients.length - 1; i >= 0; i--) {
             if (i > 1) {

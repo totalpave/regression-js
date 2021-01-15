@@ -8,9 +8,9 @@
 * @return {Array<number>} - Vector of normalized solution coefficients matrix (x)
 */
 export function gaussianElimination(input: Array<Array<number>>, order: number): Array<number> {
-    const matrix: Array<Array<number>> = input;
-    const n: number = input.length - 1;
-    const coefficients: Array<number> = [ order ];
+    let matrix: Array<Array<number>> = input;
+    let n: number = input.length - 1;
+    let coefficients: Array<number> = [ order ];
   
     for (let i: number = 0; i < n; i++) {
         let maxrow: number = i;
@@ -21,7 +21,7 @@ export function gaussianElimination(input: Array<Array<number>>, order: number):
         }
 
         for (let k: number = i; k < n + 1; k++) {
-            const tmp: number = matrix[k][i];
+            let tmp: number = matrix[k][i];
             matrix[k][i] = matrix[k][maxrow];
             matrix[k][maxrow] = tmp;
         }

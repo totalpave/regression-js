@@ -5,8 +5,7 @@ import determineCoefficients from "./utils/determineCoefficients";
 import {
     ISerializable,
     ICloneable,
-    ObjectUtils,
-    IDictionary
+    ObjectUtils
 } from '@totalpave/object';
 import {ISerializedRegression} from './utils/ISerializedRegression';
 import {RegressionType} from './utils/RegressionType';
@@ -24,7 +23,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         this._coefficients = coefficients;
     }
 
-    protected _applyOptionDefaults(): IDictionary {
+    protected _applyOptionDefaults(): Record<any, any> {
         return {};
     }
 
@@ -39,7 +38,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         return this._clone();
     }
 
-    public derivative(x: number = 0) {
+    public derivative(x: number = 0): number {
         return this._derivative(x);
     }
 

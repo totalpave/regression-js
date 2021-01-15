@@ -1,4 +1,6 @@
-export const Linear = {
+/* eslint-disable @typescript-eslint/naming-convention */
+
+export let Linear = {
     zeroGradient: {
         r2: NaN,
         equation: [ 0, 10 ],
@@ -93,7 +95,7 @@ export const Linear = {
     }
 };
   
-export const Exponential = {
+export let Exponential = {
   
     growthGreaterThanZero: {
         r2: 1,
@@ -153,7 +155,7 @@ export const Exponential = {
     }
 };
   
-export const Logarithmic = {
+export let Logarithmic = {
     greaterThanOne: {
         r2: 1,
         equation: [ 0, 10 ],
@@ -193,7 +195,7 @@ export const Logarithmic = {
     }
 };
   
-export const Power = {
+export let Power = {
     coefficientsEqualToOne: {
         r2: 1,
         equation: [ 1, 1 ],
@@ -241,7 +243,7 @@ export const Power = {
     }
 };
   
-export const Polynomial = {
+export let Polynomial = {
   
     positiveLinearGradient: {
         config: { order: 1 },

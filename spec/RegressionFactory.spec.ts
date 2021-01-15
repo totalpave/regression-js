@@ -47,7 +47,7 @@ describe('RegressionFactory', () => {
     });
 
     it('can load', () => {
-        const serialized: string = '{"type":"Linear","coefficients":[1,2],"equation":"y = 1x + 2","$regressionParams":{}}';
+        let serialized: string = '{"type":"Linear","coefficients":[1,2],"equation":"y = 1x + 2","$regressionParams":{}}';
         let regression: Regression = factory.load(serialized);
         expect(regression.solve(1)).toBe(3);
     });

@@ -4,7 +4,7 @@ import round from "../utils/round";
 
 export class ExponentialFit extends FittingStrategy {
     protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        const sum: Array<number> = [
+        let sum: Array<number> = [
             0,
             0,
             0,
@@ -24,11 +24,11 @@ export class ExponentialFit extends FittingStrategy {
             }
         }
 
-        const denominator = ((sum[1] * sum[2]) - (sum[5] * sum[5]));
-        const a: number = Math.exp(((sum[2] * sum[3]) - (sum[5] * sum[4])) / denominator);
-        const b: number = ((sum[1] * sum[4]) - (sum[5] * sum[3])) / denominator;
-        const coeffA: number = round(a, options.precision);
-        const coeffB: number = round(b, options.precision);
+        let denominator = ((sum[1] * sum[2]) - (sum[5] * sum[5]));
+        let a: number = Math.exp(((sum[2] * sum[3]) - (sum[5] * sum[4])) / denominator);
+        let b: number = ((sum[1] * sum[4]) - (sum[5] * sum[3])) / denominator;
+        let coeffA: number = round(a, options.precision);
+        let coeffB: number = round(b, options.precision);
         return [ coeffA, coeffB ];
     }
 }

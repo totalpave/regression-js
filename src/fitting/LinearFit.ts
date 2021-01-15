@@ -4,7 +4,7 @@ import round from "../utils/round";
 
 export class LinearFit extends FittingStrategy {
     protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        const sum: Array<number> = [
+        let sum: Array<number> = [
             0,
             0,
             0,
@@ -24,10 +24,10 @@ export class LinearFit extends FittingStrategy {
             }
         }
 
-        const run: number = ((len * sum[2]) - (sum[0] * sum[0]));
-        const rise: number = ((len * sum[3]) - (sum[0] * sum[1]));
-        const gradient: number = run === 0 ? 0 : round(rise / run, options.precision);
-        const intercept: number = round((sum[1] / len) - ((gradient * sum[0]) / len), options.precision);
+        let run: number = ((len * sum[2]) - (sum[0] * sum[0]));
+        let rise: number = ((len * sum[3]) - (sum[0] * sum[1]));
+        let gradient: number = run === 0 ? 0 : round(rise / run, options.precision);
+        let intercept: number = round((sum[1] / len) - ((gradient * sum[0]) / len), options.precision);
 
         return [ gradient, intercept ];
     }

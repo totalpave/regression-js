@@ -8,15 +8,15 @@ import RegressionType from '../utils/RegressionType';
 
 export class Linear extends Regression {
     protected _predict(x: number): Array<number> {
-        const gradient: number = this.getCoefficientAt(0);
-        const intercept: number = this.getCoefficientAt(1);
-        const options: IOptions = this.getOptions();
+        let gradient: number = this.getCoefficientAt(0);
+        let intercept: number = this.getCoefficientAt(1);
+        let options: IOptions = this.getOptions();
         return [ round(x, options.precision), round((gradient * x) + intercept, options.precision) ];
     }
 
     public getEquation(): string {
-        const gradient: number = this.getCoefficientAt(0);
-        const intercept: number = this.getCoefficientAt(1);
+        let gradient: number = this.getCoefficientAt(0);
+        let intercept: number = this.getCoefficientAt(1);
         return intercept === 0 ? `y = ${gradient}x` : `y = ${gradient}x + ${intercept}`;
     }
 

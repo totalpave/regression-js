@@ -40,25 +40,26 @@
         "postversion": "git push && git push --tags"
     },
     "devDependencies": {
-        "@breautek/jasmine": "3.5.1",
-        "@totalpave/eslint-plugin": "2.3.3",
-        "@typescript-eslint/eslint-plugin": "2.21.0",
-        "@typescript-eslint/parser": "2.21.0",
-        "auto-changelog": "1.16.2",
-        "eslint": "6.8.0",
-        "eslint-config-prettier": "6.10.0",
-        "jasmine-spec-reporter": "4.2.1",
-        "nyc": "15.0.0",
-        "ts-node": "8.6.2",
-        "typedoc": "0.16.11",
-        "typescript": "3.8.2"
+        "@totalpave/eslint-plugin": "4.0.0",
+        "@types/jasmine": "3.6.2",
+        "@typescript-eslint/eslint-plugin": "4.13.0",
+        "@typescript-eslint/parser": "4.13.0",
+        "auto-changelog": "2.2.1",
+        "eslint": "7.17.0",
+        "eslint-config-prettier": "7.1.0",
+        "jasmine": "3.6.3",
+        "jasmine-spec-reporter": "6.0.0",
+        "nyc": "15.1.0",
+        "ts-node": "9.1.1",
+        "typedoc": "0.20.14",
+        "typescript": "4.1.3"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
         "@totalpave/interfaces": "1.0.0",
-        "@totalpave/math": "0.1.0",
-        "@totalpave/object": "0.0.3",
-        "@types/node": "12.12.28",
-        "tslib": "1.11.0"
+        "@totalpave/math": "1.0.1",
+        "@totalpave/object": "1.0.0",
+        "@types/node": "12.19.14",
+        "tslib": "2.1.0"
     }
 }

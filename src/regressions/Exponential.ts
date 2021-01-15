@@ -11,9 +11,9 @@ export class Exponential extends Regression {
     }
 
     protected _predict(x: number): Array<number> {
-        const options: IOptions = this.getOptions();
-        const coeffA: number = this.getCoefficientAt(0);
-        const coeffB: number = this.getCoefficientAt(1);
+        let options: IOptions = this.getOptions();
+        let coeffA: number = this.getCoefficientAt(0);
+        let coeffB: number = this.getCoefficientAt(1);
         return [ round(x, options.precision), round(coeffA * Math.exp(coeffB * x), options.precision) ];
     }
 

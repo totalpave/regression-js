@@ -9,8 +9,8 @@
 * @return {number} - The r^2 value, or NaN if one cannot be calculated.
 */
 export function determineCoefficients(data: Array<Array<number>>, results: Array<Array<number>>): number {
-    const predictions: Array<Array<number>> = [];
-    const observations: Array<Array<number>> = [];
+    let predictions: Array<Array<number>> = [];
+    let observations: Array<Array<number>> = [];
   
     data.forEach((d, i) => {
         if (d[1] !== null) {
@@ -19,17 +19,17 @@ export function determineCoefficients(data: Array<Array<number>>, results: Array
         }
     });
   
-    const sum: number = observations.reduce((a, observation) => a + observation[1], 0);
-    const mean: number = sum / observations.length;
+    let sum: number = observations.reduce((a, observation) => a + observation[1], 0);
+    let mean: number = sum / observations.length;
   
-    const ssyy: number = observations.reduce((a, observation) => {
-        const difference: number = observation[1] - mean;
+    let ssyy: number = observations.reduce((a, observation) => {
+        let difference: number = observation[1] - mean;
         return a + (difference * difference);
     }, 0);
   
-    const sse: number = observations.reduce((accum, observation, index) => {
-        const prediction: Array<number> = predictions[index];
-        const residual: number = observation[1] - prediction[1];
+    let sse: number = observations.reduce((accum, observation, index) => {
+        let prediction: Array<number> = predictions[index];
+        let residual: number = observation[1] - prediction[1];
         return accum + (residual * residual);
     }, 0);
   
