@@ -16,9 +16,9 @@ describe('models', () => {
                     it(`correct predicts ${name}`, () => {
                         let fitResults: IBestFitResult = factory.bestFit(<RegressionType>model, example.data, example.config);
                         let regression: Regression = fitResults.regression;
-                        expect(regression.getEquation()).withContext('getEquation').toBe(example.string);
-                        expect(regression.getCoefficients()).withContext('getCoefficients').toEqual(example.equation);
-                        expect(fitResults.r2).withContext('r2').toEqual(example.r2);
+                        expect(regression.getEquation()).toBe(example.string);
+                        expect(regression.getCoefficients()).toEqual(example.equation);
+                        expect(fitResults.r2).toEqual(example.r2);
                     });
                 });
             });

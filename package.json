@@ -31,7 +31,7 @@
     "scripts": {
         "clean": "git clean -fdx -e node_modules",
         "lint": "eslint --ext ts 'src/**/*.ts' && eslint --ext ts 'spec/**/*.ts'",
-        "test": "npm run lint && nyc --reporter=lcov --reporter=text ts-node spec/support/jasmine.ts",
+        "test": "npm run lint && jest",
         "build": "echo \"Typescript `tsc -v`\" && tsc && echo \"Build successful.\"",
         "build-docs": "typedoc --excludePrivate --readme ./README.md --out ./docs ./src",
         "prepublish": "npm run clean && npm run build && npm test",
@@ -40,26 +40,25 @@
         "postversion": "git push && git push --tags"
     },
     "devDependencies": {
-        "@totalpave/eslint-plugin": "4.0.0",
-        "@types/jasmine": "3.6.2",
-        "@typescript-eslint/eslint-plugin": "4.13.0",
-        "@typescript-eslint/parser": "4.13.0",
-        "auto-changelog": "2.2.1",
-        "eslint": "7.17.0",
-        "eslint-config-prettier": "7.1.0",
-        "jasmine": "3.6.3",
-        "jasmine-spec-reporter": "6.0.0",
-        "nyc": "15.1.0",
-        "ts-node": "9.1.1",
-        "typedoc": "0.20.14",
-        "typescript": "4.1.3"
+        "@totalpave/eslint-plugin": "6.0.1",
+        "@types/jest": "27.4.1",
+        "@typescript-eslint/eslint-plugin": "5.12.1",
+        "@typescript-eslint/parser": "5.12.1",
+        "auto-changelog": "2.4.0",
+        "eslint": "8.9.0",
+        "eslint-config-prettier": "8.4.0",
+        "jest": "27.5.1",
+        "ts-jest": "27.1.3",
+        "ts-node": "10.5.0",
+        "typedoc": "0.22.12",
+        "typescript": "4.5.5"
     },
     "author": "Tom Alexander <me@tomalexander.co.nz>",
     "dependencies": {
-        "@totalpave/interfaces": "1.0.0",
-        "@totalpave/math": "1.0.1",
+        "@totalpave/interfaces": "3.0.0",
+        "@totalpave/math": "1.0.2",
         "@totalpave/object": "1.0.0",
-        "@types/node": "12.19.14",
-        "tslib": "2.1.0"
+        "@types/node": "16.11.26",
+        "tslib": "2.3.1"
     }
 }

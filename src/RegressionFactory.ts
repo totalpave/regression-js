@@ -39,7 +39,7 @@ export class RegressionFactory {
             case RegressionType.POWER:
                 regression = new Power(coefficients, options);
                 break;
-            default: this._throwNotBuildable(type);
+            default: this.$throwNotBuildable(type);
         }
 
         return regression;
@@ -70,7 +70,7 @@ export class RegressionFactory {
                 fitting = Power.getFittingStrategy(options);
                 regression = new Power(fitting.fit(data), options);
                 break;
-            default: this._throwNotBuildable(type);
+            default: this.$throwNotBuildable(type);
         }
 
         return {
@@ -84,7 +84,7 @@ export class RegressionFactory {
         return this.create<T>(<RegressionType>serializable.type, <Array<number>>serializable.coefficients, <IOptions>serializable.options);
     }
 
-    private _throwNotBuildable(type: RegressionType): void {
+    private $throwNotBuildable(type: RegressionType): void {
         throw new Error(`"${type} is not a buildable regression`);
     }
 }
