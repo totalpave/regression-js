@@ -3,6 +3,7 @@ export interface IRangeOptions {
     low: number;
     high: number;
     preferLowerX: boolean;
+    allowOutOfBounds?: boolean;
 }
 
 export interface IOptions {

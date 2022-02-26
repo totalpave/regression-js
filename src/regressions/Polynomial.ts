@@ -8,14 +8,34 @@ import { IDictionary } from '@totalpave/interfaces';
 import {IRangeOptions} from '../IOptions';
 
 export class Polynomial extends Regression {
+    private $averageSlope: number = null;
+
     protected _predict(x: number): Array<number> {
-        return [
-            round(x, this.getOptions().precision),
-            round(
-                this.getCoefficients().reverse().reduce((sum, coeff, power) => sum + (coeff * (x ** power)), 0),
-                this.getOptions().precision,
-            )
-        ];
+        let options: IOptions = this.getOptions();
+        if (options && options.xRange && options.xRange.allowOutOfBounds && x > this.getOptions().xRange.high) {
+
+            console.log('INTERPOLATION!!');
+
+            // interpolate
+            let avgSlope: number = this.getAverageSlope();
+            let yAtEndSafeX: number = this.solve(options.xRange.high);
+
+            // simple y = mx + b
+            let yDrop: number = avgSlope * (x - options.xRange.high);
+
+            let precision: number = this.getOptions().precision;
+
+            return [ round(x, precision), round(yAtEndSafeX - yDrop, precision) ];
+        }
+        else {
+            return [
+                round(x, options.precision),
+                round(
+                    this.getCoefficients().reverse().reduce((sum, coeff, power) => sum + (coeff * (x ** power)), 0),
+                    options.precision,
+                )
+            ];
+        }
     }
 
     protected _applyOptionDefaults(): IDictionary {
@@ -25,10 +45,38 @@ export class Polynomial extends Regression {
             xRange: {
                 low: 0,
                 high: 100,
-                preferLowerX: true
+                preferLowerX: true,
+                allowOutOfBounds: false
             }
         };
         return obj;
+    }
+
+    public getAverageSlope(): number {
+        if (this.$averageSlope !== null) {
+            return this.$averageSlope;
+        }
+
+        let options: IOptions = this.getOptions();
+
+        let startX: number = options.xRange.low;
+        let endX: number = options.xRange.high;
+
+        let ycount: number = 0;
+        let totalY: number = 0;
+
+        for (let i: number = startX + 1; i < endX; i++) {
+            let y0: number = this.solve(i - 1);
+            let y1: number = this.solve(i);
+
+            ycount++;
+            totalY += y1 - y0;
+        }
+
+        let avgY: number = totalY / ycount;
+        
+        this.$averageSlope = avgY;
+        return avgY;
     }
 
     protected _derivative(x: number): number {
@@ -85,21 +133,28 @@ export class Polynomial extends Regression {
         return new Polynomial(this.getCoefficients(), this.getOptions());
     }
 
-    public findX(y: number, range?: IRangeOptions): number {
-        if (!range) {
-            range = {
-                low: this.getOptions().xRange.low,
-                high: this.getOptions().xRange.high,
-                preferLowerX: this.getOptions().xRange.preferLowerX
+    public findX(y: number, range?: Partial<IRangeOptions>): number {
+        let opts: IRangeOptions = {
+            low: this.getOptions().xRange.low,
+            high: this.getOptions().xRange.high,
+            preferLowerX: this.getOptions().xRange.preferLowerX,
+            allowOutOfBounds: false
+        };
+
+        if (range) {
+            opts = {
+                ...opts,
+                ...range
             };
         }
 
-        if (range.low > range.high) {
-            let t = range.high;
-            range.high = range.low;
-            range.low = t;
+        if (opts.low > opts.high) {
+            let t = opts.high;
+            opts.high = opts.low;
+            opts.low = t;
         }
-        return this._findX(y, range);
+
+        return this._findX(y, opts);
     }
 
     /**
@@ -144,6 +199,29 @@ export class Polynomial extends Regression {
         return x;
     }
 
+    // private $findQuadraticRoots(b: number, c: number, e: number): Array<Array<number>> {
+
+    //     console.log('DK', DK);
+
+    //     return [];
+    //     // if (Math.abs(c) < e) {
+    //     //     if (Math.abs(b) < e) {
+    //     //         return [ [ 0, 2 ] ];
+    //     //     }
+    //     //     return b < 0 ? [ [ 0, 1 ], [ -b, 1 ] ] : [ [ -b, 1 ], [ 0, 1 ] ];
+    //     // }
+        
+    //     // let delta = b * b - 4 * c;
+    //     // if (Math.abs(delta) <= e) {
+    //     //     return [ [ -b / 2, 2 ] ];
+    //     // }
+
+    //     // if (delta > 0) {
+    //     //     let d: number = Math.sqrt(delta);
+    //     //     return [ [  ] ];
+    //     // }
+    // }
+
     private $quadratic(y: number, range: IRangeOptions): number {
         let coefficients: Array<number> = this.getCoefficients();
         coefficients[coefficients.length - 1] -= y;
@@ -156,15 +234,22 @@ export class Polynomial extends Regression {
         let nResult: number = ((b * -1) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
 
         if (isNaN(pResult) || isNaN(nResult)) {
-            return null;
+            // if we reached here, we are requesting a Y value
+            // that doesn't fit in the given polynomial, therefore
+            // we will need to find the X result via extrapolation given
+            // the average slope.
+            return this.$findExtrapolatedX(y, range);
         }
 
-        let possibilities: Array<number> = [ pResult, nResult ].filter((value: number): boolean => {
-            return value >= range.low && value <= range.high;
-        });
+        let possibilities: Array<number> = [ pResult, nResult ];
+
+        if (!range.allowOutOfBounds) {
+            possibilities = possibilities.filter((value: number): boolean => {
+                return value >= range.low && value <= range.high;
+            });
+        }
 
         let chosen: number = null;
-
         if (possibilities.length === 1) {
             chosen = possibilities[0];
         }
@@ -197,6 +282,78 @@ export class Polynomial extends Regression {
         }
 
         return chosen;
+    }
+
+    // Inefficient brute force method...
+    private $findExtrapolatedX(y: number, range: IRangeOptions): number {
+        let slope: number = this.getAverageSlope();
+
+        const ACCEPTABLE_APPROX: number = 1e-8;
+
+        let isApproxZero = (v: number): boolean => {
+            return v >= -ACCEPTABLE_APPROX && v <= ACCEPTABLE_APPROX;
+        };
+
+        let criticalPoints: Array<number> = [];
+        let firstDeriv: number = this.derivative(range.low);
+        let isPositiveSlope: boolean = null;
+        let offset: number = 0;
+
+        while (isApproxZero(firstDeriv)) {
+            criticalPoints.push(range.low + offset);
+            offset++;
+            firstDeriv = this.derivative(range.low + offset);
+        }
+        
+        isPositiveSlope = firstDeriv > 0;
+
+        for (let i: number = range.low + offset; i < range.low + 100; i++) {
+            let d: number = this.derivative(i);
+
+            let isDPositive: boolean = null;
+            if (d === 0) {
+                criticalPoints.push(i);
+            }
+            else {
+                isDPositive = d > 0;
+
+                if (isPositiveSlope !== isDPositive) {
+                    // The critical point is somewheres in between i - 1 and i.
+                    // But we aren't trying to be super accurate here, so we will
+                    // call i-1 the critical point.
+
+                    criticalPoints.push(i-1);
+                    isPositiveSlope = isDPositive;
+                }
+            }
+        }
+
+        let criticalPoint: number = null;
+        if (criticalPoints.length === 0) {
+            throw new Error('Unsolvable equation');
+        }
+        else if (criticalPoints.length === 1) {
+            criticalPoint = criticalPoints[0];
+        }
+        else {
+            for (let i: number = 0; i < criticalPoints.length; i++) {
+                criticalPoint = Math.min(criticalPoint, criticalPoints[i]);
+            }
+        }
+
+        let yAtCritical: number = this.solve(criticalPoint);
+        let xGuess = Math.abs((yAtCritical - y) / slope)
+
+        // console.log('DEBUG',
+        //     this.getEquation(), '\n',
+        //     'y = ', y, '\n',
+        //     'yAtCritical = ', yAtCritical, '\n',
+        //     'criticalPoint = ', criticalPoint, '\n',
+        //     'slope = ', slope, '\n',
+        //     'x? = ', criticalPoint + xGuess, '\n'
+        // );
+
+        return criticalPoint + xGuess;
     }
 
     private $newton(x0: number, coefficients: Array<number>): number {

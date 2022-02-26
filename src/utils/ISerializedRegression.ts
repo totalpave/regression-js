@@ -1,5 +1,5 @@
 import RegressionType from './RegressionType';
-import IOptions from 'src/IOptions';
+import IOptions from '../IOptions';
 
 export interface ISerializedRegression {
     type: RegressionType;

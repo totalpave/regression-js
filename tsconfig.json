@@ -10,7 +10,6 @@
         "noImplicitThis": true,
         "alwaysStrict": true,
         "moduleResolution": "node",
-        "baseUrl": "./",
         "plugins": []
     },
     "exclude": [

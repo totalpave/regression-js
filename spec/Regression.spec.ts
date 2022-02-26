@@ -83,7 +83,7 @@ describe('Regression', () => {
                     12
                 ]);
                 expect(fitted.regression.findX(12)).toBe(0);
-                expect(fitted.regression.findX(3)).toBe(null);
+                expect(fitted.regression.findX(3)).toBe(0.013138686131386862);
                 expect(fitted.regression.findX(14)).toBe(1.3538893678645232);
             });
 
