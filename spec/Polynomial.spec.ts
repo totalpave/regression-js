@@ -72,7 +72,7 @@ describe('Polynomial', () => {
                 })).toBe(32.86275645858272);
             });
 
-            it.only('should interpolate', () => {
+            it('should interpolate', () => {
                 let p: Polynomial = factory.load(serializedCurve);
                 expect(p.findX(0, {
                     allowOutOfBounds: true
