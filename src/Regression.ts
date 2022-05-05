@@ -23,6 +23,31 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         this.$coefficients = coefficients;
     }
 
+    public setOrder(order: number): void {
+        this.$options.order = order;
+    }
+
+    public setPrecision(precision: number): void {
+        this.$options.precision = precision;
+    }
+
+    public setPeriod(period: number): void {
+        this.$options.period = period;
+    }
+
+    public setRange(low: number, high: number): void {
+        this.$options.xRange.low = low;
+        this.$options.xRange.high = high;
+    }
+
+    public setPreferLowerX(flag: boolean): void {
+        this.$options.xRange.preferLowerX = flag;
+    }
+
+    public allowOutOfBoundResolutions(flag: boolean): void {
+        this.$options.xRange.allowOutOfBounds = flag;
+    }
+
     protected _applyOptionDefaults(): Record<any, any> {
         return {};
     }
