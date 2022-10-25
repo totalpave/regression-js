@@ -64,17 +64,17 @@
 
 #### Defined in
 
-[Regression.ts:17](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L17)
+[Regression.ts:17](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L17)
 
 ## Methods
 
 ### \_applyOptionDefaults
 
-▸ `Protected` **_applyOptionDefaults**(): `IDictionary`<`any`\>
+▸ `Protected` **_applyOptionDefaults**(): `Record`<`string`, `any`\>
 
 #### Returns
 
-`IDictionary`<`any`\>
+`Record`<`string`, `any`\>
 
 #### Overrides
 
@@ -82,7 +82,7 @@
 
 #### Defined in
 
-[regressions/Polynomial.ts:41](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L41)
+[regressions/Polynomial.ts:56](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L56)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:132](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L132)
+[regressions/Polynomial.ts:147](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L147)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:82](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L82)
+[regressions/Polynomial.ts:97](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L97)
 
 ___
 
@@ -154,7 +154,7 @@ but the super class will never use findX generically, so this is ok.
 
 #### Defined in
 
-[regressions/Polynomial.ts:166](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L166)
+[regressions/Polynomial.ts:181](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L181)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:13](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L13)
+[regressions/Polynomial.ts:13](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L13)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:47](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L47)
+[Regression.ts:47](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L47)
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:62](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L62)
+[Regression.ts:62](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L62)
 
 ___
 
@@ -244,7 +244,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:66](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L66)
+[Regression.ts:66](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L66)
 
 ___
 
@@ -269,7 +269,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:136](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L136)
+[regressions/Polynomial.ts:151](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L151)
 
 ___
 
@@ -293,7 +293,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:90](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L90)
+[Regression.ts:90](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L90)
 
 ___
 
@@ -307,7 +307,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:55](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L55)
+[regressions/Polynomial.ts:70](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L70)
 
 ___
 
@@ -331,7 +331,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:78](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L78)
+[Regression.ts:78](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L78)
 
 ___
 
@@ -349,7 +349,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:82](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L82)
+[Regression.ts:82](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L82)
 
 ___
 
@@ -367,7 +367,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:103](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L103)
+[regressions/Polynomial.ts:118](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L118)
 
 ___
 
@@ -391,7 +391,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:112](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L112)
+[Regression.ts:112](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L112)
 
 ___
 
@@ -409,7 +409,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:70](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L70)
+[Regression.ts:70](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L70)
 
 ___
 
@@ -427,7 +427,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:120](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L120)
+[regressions/Polynomial.ts:135](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L135)
 
 ___
 
@@ -445,7 +445,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:98](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L98)
+[Regression.ts:98](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L98)
 
 ___
 
@@ -469,7 +469,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:74](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L74)
+[Regression.ts:74](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L74)
 
 ___
 
@@ -493,7 +493,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:26](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L26)
+[Regression.ts:26](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L26)
 
 ___
 
@@ -517,7 +517,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:34](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L34)
+[Regression.ts:34](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L34)
 
 ___
 
@@ -541,7 +541,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:30](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L30)
+[Regression.ts:30](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L30)
 
 ___
 
@@ -565,7 +565,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:43](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L43)
+[Regression.ts:43](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L43)
 
 ___
 
@@ -590,7 +590,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:38](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L38)
+[Regression.ts:38](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L38)
 
 ___
 
@@ -614,7 +614,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:86](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L86)
+[Regression.ts:86](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L86)
 
 ___
 
@@ -632,7 +632,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:108](https://github.com/totalpave/regression-js/blob/de5670c/src/Regression.ts#L108)
+[Regression.ts:108](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L108)
 
 ___
 
@@ -652,7 +652,7 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:128](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L128)
+[regressions/Polynomial.ts:143](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L143)
 
 ___
 
@@ -666,4 +666,4 @@ ___
 
 #### Defined in
 
-[regressions/Polynomial.ts:124](https://github.com/totalpave/regression-js/blob/de5670c/src/regressions/Polynomial.ts#L124)
+[regressions/Polynomial.ts:139](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Polynomial.ts#L139)

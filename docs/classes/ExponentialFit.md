@@ -37,7 +37,7 @@
 
 #### Defined in
 
-[fitting/FittingStrategy.ts:7](https://github.com/totalpave/regression-js/blob/de5670c/src/fitting/FittingStrategy.ts#L7)
+[fitting/FittingStrategy.ts:7](https://github.com/totalpave/regression-js/blob/5b33716/src/fitting/FittingStrategy.ts#L7)
 
 ## Methods
 
@@ -62,7 +62,7 @@
 
 #### Defined in
 
-[fitting/ExponentialFit.ts:6](https://github.com/totalpave/regression-js/blob/de5670c/src/fitting/ExponentialFit.ts#L6)
+[fitting/ExponentialFit.ts:6](https://github.com/totalpave/regression-js/blob/5b33716/src/fitting/ExponentialFit.ts#L6)
 
 ___
 
@@ -86,4 +86,4 @@ ___
 
 #### Defined in
 
-[fitting/FittingStrategy.ts:16](https://github.com/totalpave/regression-js/blob/de5670c/src/fitting/FittingStrategy.ts#L16)
+[fitting/FittingStrategy.ts:16](https://github.com/totalpave/regression-js/blob/5b33716/src/fitting/FittingStrategy.ts#L16)

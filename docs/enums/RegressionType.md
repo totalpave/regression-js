@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [EXPONENTIAL](RegressionType.md#exponential)
 - [LINEAR](RegressionType.md#linear)
@@ -12,52 +12,52 @@
 - [POLYNOMIAL](RegressionType.md#polynomial)
 - [POWER](RegressionType.md#power)
 
-## Enumeration members
+## Enumeration Members
 
 ### EXPONENTIAL
 
-• **EXPONENTIAL** = `"Exponential"`
+• **EXPONENTIAL** = ``"Exponential"``
 
 #### Defined in
 
-[utils/RegressionType.ts:3](https://github.com/totalpave/regression-js/blob/de5670c/src/utils/RegressionType.ts#L3)
+[utils/RegressionType.ts:3](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L3)
 
 ___
 
 ### LINEAR
 
-• **LINEAR** = `"Linear"`
+• **LINEAR** = ``"Linear"``
 
 #### Defined in
 
-[utils/RegressionType.ts:4](https://github.com/totalpave/regression-js/blob/de5670c/src/utils/RegressionType.ts#L4)
+[utils/RegressionType.ts:4](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L4)
 
 ___
 
 ### LOGARITHMIC
 
-• **LOGARITHMIC** = `"Logarithmic"`
+• **LOGARITHMIC** = ``"Logarithmic"``
 
 #### Defined in
 
-[utils/RegressionType.ts:5](https://github.com/totalpave/regression-js/blob/de5670c/src/utils/RegressionType.ts#L5)
+[utils/RegressionType.ts:5](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L5)
 
 ___
 
 ### POLYNOMIAL
 
-• **POLYNOMIAL** = `"Polynomial"`
+• **POLYNOMIAL** = ``"Polynomial"``
 
 #### Defined in
 
-[utils/RegressionType.ts:6](https://github.com/totalpave/regression-js/blob/de5670c/src/utils/RegressionType.ts#L6)
+[utils/RegressionType.ts:6](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L6)
 
 ___
 
 ### POWER
 
-• **POWER** = `"Power"`
+• **POWER** = ``"Power"``
 
 #### Defined in
 
-[utils/RegressionType.ts:7](https://github.com/totalpave/regression-js/blob/de5670c/src/utils/RegressionType.ts#L7)
+[utils/RegressionType.ts:7](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L7)

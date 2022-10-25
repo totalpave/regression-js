@@ -6,12 +6,24 @@
 
 ### Properties
 
+- [enforceNegativeSlope](IOptions.md#enforcenegativeslope)
 - [order](IOptions.md#order)
 - [period](IOptions.md#period)
 - [precision](IOptions.md#precision)
 - [xRange](IOptions.md#xrange)
+- [yRange](IOptions.md#yrange)
 
 ## Properties
+
+### enforceNegativeSlope
+
+• `Optional` **enforceNegativeSlope**: `boolean`
+
+#### Defined in
+
+[IOptions.ts:15](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L15)
+
+___
 
 ### order
 
@@ -19,7 +31,7 @@
 
 #### Defined in
 
-[IOptions.ts:10](https://github.com/totalpave/regression-js/blob/de5670c/src/IOptions.ts#L10)
+[IOptions.ts:10](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L10)
 
 ___
 
@@ -29,7 +41,7 @@ ___
 
 #### Defined in
 
-[IOptions.ts:12](https://github.com/totalpave/regression-js/blob/de5670c/src/IOptions.ts#L12)
+[IOptions.ts:12](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L12)
 
 ___
 
@@ -39,7 +51,7 @@ ___
 
 #### Defined in
 
-[IOptions.ts:11](https://github.com/totalpave/regression-js/blob/de5670c/src/IOptions.ts#L11)
+[IOptions.ts:11](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L11)
 
 ___
 
@@ -49,4 +61,14 @@ ___
 
 #### Defined in
 
-[IOptions.ts:13](https://github.com/totalpave/regression-js/blob/de5670c/src/IOptions.ts#L13)
+[IOptions.ts:13](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L13)
+
+___
+
+### yRange
+
+• `Optional` **yRange**: [`IRangeOptions`](IRangeOptions.md)
+
+#### Defined in
+
+[IOptions.ts:14](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L14)
