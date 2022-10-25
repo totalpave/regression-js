@@ -80,4 +80,19 @@ describe('Polynomial', () => {
             });
         });
     });
+
+    describe('Sanity Checks', () => {
+        let serializedCurve: string = '{"type":"Polynomial","coefficients":[0.000152046704897657,-0.00994217768311501,0.211343005299568,-1.59829998016357,-0.0000337600504280999,100],"options":{"order":5,"precision":10,"enforceNegativeSlope": true, "period":null,"xRange":{"preferLowerX":true,"low":0,"high":25, "allowOutOfBounds": true}, "yRange": {"low": 0, "high": 100}}}';
+        let factory: RegressionFactory = new RegressionFactory();
+
+        it('X 100 should be equal to Y 0', () => {
+            let p: Polynomial = factory.load(serializedCurve);
+            expect(p.solve(100)).toBe(0);
+        });
+
+        it('X 26 should be equal to Y 0.8431922929', () => {
+            let p: Polynomial = factory.load(serializedCurve);
+            expect(p.solve(26)).toBe(0.8431922929);
+        });
+    });
 });

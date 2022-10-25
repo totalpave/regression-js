@@ -1,6 +1,7 @@
 import {Regression} from "../Regression";
 import round from "../utils/round";
 import IOptions from "../IOptions";
+import {ObjectUtils} from '@totalpave/object';
 import FittingStrategy from "../fitting/FittingStrategy";
 import PolynomialFit from "../fitting/PolynomialFit";
 import RegressionType from '../utils/RegressionType';
@@ -11,17 +12,35 @@ export class Polynomial extends Regression {
 
     protected _predict(x: number): Array<number> {
         let options: IOptions = this.getOptions();
-        if (options && options.xRange && options.xRange.allowOutOfBounds && x > this.getOptions().xRange.high) {
+        if (options && options.xRange && options.xRange.allowOutOfBounds && x > options.xRange.high) {
             // interpolate
             let avgSlope: number = this.getAverageSlope();
             let yAtEndSafeX: number = this.solve(options.xRange.high);
 
+            console.log(avgSlope, yAtEndSafeX);
+
             // simple y = mx + b
             let yDrop: number = avgSlope * (x - options.xRange.high);
+            if (options.enforceNegativeSlope) {
+                yDrop = Math.abs(yDrop);
+            }
 
             let precision: number = this.getOptions().precision;
 
-            return [ round(x, precision), round(yAtEndSafeX - yDrop, precision) ];
+            let retx: number = round(x, precision);
+            let rety: number = round(yAtEndSafeX - yDrop, precision);
+
+            if (options.yRange) {
+                if (!ObjectUtils.isVoid(options.yRange.low)) {
+                    rety = Math.max(rety, options.yRange.low);
+                }
+
+                if (!ObjectUtils.isVoid(options.yRange.high)) {
+                    rety = Math.min(rety, options.yRange.high);
+                }
+            }
+
+            return [ retx, rety ];
         }
         else {
             return [
@@ -195,29 +214,6 @@ export class Polynomial extends Regression {
         return x;
     }
 
-    // private $findQuadraticRoots(b: number, c: number, e: number): Array<Array<number>> {
-
-    //     console.log('DK', DK);
-
-    //     return [];
-    //     // if (Math.abs(c) < e) {
-    //     //     if (Math.abs(b) < e) {
-    //     //         return [ [ 0, 2 ] ];
-    //     //     }
-    //     //     return b < 0 ? [ [ 0, 1 ], [ -b, 1 ] ] : [ [ -b, 1 ], [ 0, 1 ] ];
-    //     // }
-        
-    //     // let delta = b * b - 4 * c;
-    //     // if (Math.abs(delta) <= e) {
-    //     //     return [ [ -b / 2, 2 ] ];
-    //     // }
-
-    //     // if (delta > 0) {
-    //     //     let d: number = Math.sqrt(delta);
-    //     //     return [ [  ] ];
-    //     // }
-    // }
-
     private $quadratic(y: number, range: IRangeOptions): number {
         let coefficients: Array<number> = this.getCoefficients();
         coefficients[coefficients.length - 1] -= y;
@@ -339,15 +335,6 @@ export class Polynomial extends Regression {
 
         let yAtCritical: number = this.solve(criticalPoint);
         let xGuess = Math.abs((yAtCritical - y) / slope)
-
-        // console.log('DEBUG',
-        //     this.getEquation(), '\n',
-        //     'y = ', y, '\n',
-        //     'yAtCritical = ', yAtCritical, '\n',
-        //     'criticalPoint = ', criticalPoint, '\n',
-        //     'slope = ', slope, '\n',
-        //     'x? = ', criticalPoint + xGuess, '\n'
-        // );
 
         return criticalPoint + xGuess;
     }

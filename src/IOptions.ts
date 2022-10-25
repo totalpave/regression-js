@@ -11,6 +11,8 @@ export interface IOptions {
     precision?: number;
     period?: number;
     xRange?: IRangeOptions;
+    yRange?: IRangeOptions;
+    enforceNegativeSlope?: boolean;
 }
 
 export default IOptions;
