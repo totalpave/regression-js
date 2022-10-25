@@ -4,7 +4,6 @@ import IOptions from "../IOptions";
 import FittingStrategy from "../fitting/FittingStrategy";
 import PolynomialFit from "../fitting/PolynomialFit";
 import RegressionType from '../utils/RegressionType';
-import { IDictionary } from '@totalpave/interfaces';
 import {IRangeOptions} from '../IOptions';
 
 export class Polynomial extends Regression {
@@ -13,9 +12,6 @@ export class Polynomial extends Regression {
     protected _predict(x: number): Array<number> {
         let options: IOptions = this.getOptions();
         if (options && options.xRange && options.xRange.allowOutOfBounds && x > this.getOptions().xRange.high) {
-
-            console.log('INTERPOLATION!!');
-
             // interpolate
             let avgSlope: number = this.getAverageSlope();
             let yAtEndSafeX: number = this.solve(options.xRange.high);
@@ -38,7 +34,7 @@ export class Polynomial extends Regression {
         }
     }
 
-    protected _applyOptionDefaults(): IDictionary {
+    protected _applyOptionDefaults(): Record<string, any> {
         let obj: {
             xRange: IRangeOptions;
         } = {
