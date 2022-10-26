@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[utils/RegressionType.ts:3](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L3)
+[utils/RegressionType.ts:3](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/RegressionType.ts#L3)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[utils/RegressionType.ts:4](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L4)
+[utils/RegressionType.ts:4](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/RegressionType.ts#L4)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[utils/RegressionType.ts:5](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L5)
+[utils/RegressionType.ts:5](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/RegressionType.ts#L5)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[utils/RegressionType.ts:6](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L6)
+[utils/RegressionType.ts:6](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/RegressionType.ts#L6)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[utils/RegressionType.ts:7](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/RegressionType.ts#L7)
+[utils/RegressionType.ts:7](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/RegressionType.ts#L7)

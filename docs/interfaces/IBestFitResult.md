@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[RegressionFactory.ts:16](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L16)
+[RegressionFactory.ts:16](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L16)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[RegressionFactory.ts:15](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L15)
+[RegressionFactory.ts:15](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L15)

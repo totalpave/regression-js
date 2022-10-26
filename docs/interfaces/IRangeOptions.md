@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[IOptions.ts:6](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L6)
+[IOptions.ts:6](https://github.com/totalpave/regression-js/blob/6c639d5/src/IOptions.ts#L6)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[IOptions.ts:4](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L4)
+[IOptions.ts:4](https://github.com/totalpave/regression-js/blob/6c639d5/src/IOptions.ts#L4)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[IOptions.ts:3](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L3)
+[IOptions.ts:3](https://github.com/totalpave/regression-js/blob/6c639d5/src/IOptions.ts#L3)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[IOptions.ts:5](https://github.com/totalpave/regression-js/blob/5b33716/src/IOptions.ts#L5)
+[IOptions.ts:5](https://github.com/totalpave/regression-js/blob/6c639d5/src/IOptions.ts#L5)

@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[RegressionFactory.ts:21](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L21)
+[RegressionFactory.ts:21](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L21)
 
 ## Methods
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[RegressionFactory.ts:48](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L48)
+[RegressionFactory.ts:48](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L48)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[RegressionFactory.ts:23](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L23)
+[RegressionFactory.ts:23](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L23)
 
 ___
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[RegressionFactory.ts:82](https://github.com/totalpave/regression-js/blob/5b33716/src/RegressionFactory.ts#L82)
+[RegressionFactory.ts:82](https://github.com/totalpave/regression-js/blob/6c639d5/src/RegressionFactory.ts#L82)

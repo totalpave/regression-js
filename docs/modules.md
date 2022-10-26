@@ -59,7 +59,7 @@ Gaussian elimination.
 
 #### Defined in
 
-[utils/gaussianElimination.ts:10](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/gaussianElimination.ts#L10)
+[utils/gaussianElimination.ts:10](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/gaussianElimination.ts#L10)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 #### Defined in
 
-[utils/r2.ts:5](https://github.com/totalpave/regression-js/blob/5b33716/src/utils/r2.ts#L5)
+[utils/r2.ts:5](https://github.com/totalpave/regression-js/blob/6c639d5/src/utils/r2.ts#L5)

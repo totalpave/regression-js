@@ -63,7 +63,7 @@
 
 #### Defined in
 
-[regressions/Exponential.ts:9](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L9)
+[regressions/Exponential.ts:9](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L9)
 
 ## Methods
 
@@ -81,7 +81,7 @@
 
 #### Defined in
 
-[Regression.ts:51](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L51)
+[Regression.ts:51](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L51)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:42](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L42)
+[regressions/Exponential.ts:42](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L42)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:36](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L36)
+[regressions/Exponential.ts:36](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L36)
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:46](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L46)
+[regressions/Exponential.ts:46](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L46)
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:13](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L13)
+[regressions/Exponential.ts:13](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L13)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:47](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L47)
+[Regression.ts:47](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L47)
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:62](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L62)
+[Regression.ts:62](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L62)
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:66](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L66)
+[Regression.ts:66](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L66)
 
 ___
 
@@ -261,7 +261,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:94](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L94)
+[Regression.ts:94](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L94)
 
 ___
 
@@ -285,7 +285,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:90](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L90)
+[Regression.ts:90](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L90)
 
 ___
 
@@ -309,7 +309,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:78](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L78)
+[Regression.ts:78](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L78)
 
 ___
 
@@ -327,7 +327,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:82](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L82)
+[Regression.ts:82](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L82)
 
 ___
 
@@ -345,7 +345,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:20](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L20)
+[regressions/Exponential.ts:20](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L20)
 
 ___
 
@@ -369,7 +369,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:112](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L112)
+[Regression.ts:112](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L112)
 
 ___
 
@@ -387,7 +387,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:70](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L70)
+[Regression.ts:70](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L70)
 
 ___
 
@@ -405,7 +405,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:24](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L24)
+[regressions/Exponential.ts:24](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L24)
 
 ___
 
@@ -423,7 +423,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:98](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L98)
+[Regression.ts:98](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L98)
 
 ___
 
@@ -447,7 +447,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:74](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L74)
+[Regression.ts:74](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L74)
 
 ___
 
@@ -471,7 +471,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:26](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L26)
+[Regression.ts:26](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L26)
 
 ___
 
@@ -495,7 +495,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:34](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L34)
+[Regression.ts:34](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L34)
 
 ___
 
@@ -519,7 +519,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:30](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L30)
+[Regression.ts:30](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L30)
 
 ___
 
@@ -543,7 +543,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:43](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L43)
+[Regression.ts:43](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L43)
 
 ___
 
@@ -568,7 +568,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:38](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L38)
+[Regression.ts:38](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L38)
 
 ___
 
@@ -592,7 +592,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:86](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L86)
+[Regression.ts:86](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L86)
 
 ___
 
@@ -610,7 +610,7 @@ ___
 
 #### Defined in
 
-[Regression.ts:108](https://github.com/totalpave/regression-js/blob/5b33716/src/Regression.ts#L108)
+[Regression.ts:108](https://github.com/totalpave/regression-js/blob/6c639d5/src/Regression.ts#L108)
 
 ___
 
@@ -630,7 +630,7 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:32](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L32)
+[regressions/Exponential.ts:32](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L32)
 
 ___
 
@@ -644,4 +644,4 @@ ___
 
 #### Defined in
 
-[regressions/Exponential.ts:28](https://github.com/totalpave/regression-js/blob/5b33716/src/regressions/Exponential.ts#L28)
+[regressions/Exponential.ts:28](https://github.com/totalpave/regression-js/blob/6c639d5/src/regressions/Exponential.ts#L28)
