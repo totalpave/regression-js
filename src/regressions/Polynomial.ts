@@ -17,8 +17,6 @@ export class Polynomial extends Regression {
             let avgSlope: number = this.getAverageSlope();
             let yAtEndSafeX: number = this.solve(options.xRange.high);
 
-            console.log(avgSlope, yAtEndSafeX);
-
             // simple y = mx + b
             let yDrop: number = avgSlope * (x - options.xRange.high);
             if (options.enforceNegativeSlope) {
