@@ -10,7 +10,7 @@
     "publishConfig": {
         "registry": "https://registry.totalpave.com:48731"
     },
-    "version": "4.2.1",
+    "version": "5.0.0",
     "license": "MIT",
     "main": "./lib/api.js",
     "typings": "./lib/api.d.ts",
