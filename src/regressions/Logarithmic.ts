@@ -6,7 +6,7 @@ import FittingStrategy from "../fitting/FittingStrategy";
 import RegressionType from '../utils/RegressionType';
 
 export class Logarithmic extends Regression {
-    protected _predict(x: number): Array<number> {
+    protected _predict(x: number): number[] {
         return [ round(x, this.getOptions().precision), round(round(this.getCoefficientAt(0) + (this.getCoefficientAt(1) * Math.log(x)), this.getOptions().precision), this.getOptions().precision) ];
     }
 

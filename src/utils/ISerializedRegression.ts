@@ -3,6 +3,6 @@ import IOptions from '../IOptions';
 
 export interface ISerializedRegression {
     type: RegressionType;
-    coefficients: Array<number>;
+    coefficients: number[];
     options: IOptions;
 }

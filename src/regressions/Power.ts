@@ -7,7 +7,7 @@ import PowerFit from "../fitting/PowerFit";
 import RegressionType from '../utils/RegressionType';
 
 export class Power extends Regression {
-    protected _predict(x: number): Array<number> {
+    protected _predict(x: number): number[] {
         return [ round(x, this.getOptions().precision), round(round(this.getCoefficientAt(0) * (x ** this.getCoefficientAt(1)), this.getOptions().precision), this.getOptions().precision) ];
     }
 

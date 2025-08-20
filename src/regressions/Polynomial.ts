@@ -10,7 +10,7 @@ import {IRangeOptions} from '../IOptions';
 export class Polynomial extends Regression {
     private $averageSlope: number = null;
 
-    protected _predict(x: number): Array<number> {
+    protected _predict(x: number): number[] {
         let options: IOptions = this.getOptions();
         if (options && options.xRange && options.xRange.allowOutOfBounds && x > options.xRange.high) {
             // interpolate
@@ -45,7 +45,7 @@ export class Polynomial extends Regression {
                 round(x, options.precision),
                 round(
                     this.getCoefficients().reverse().reduce((sum, coeff, power) => sum + (coeff * (x ** power)), 0),
-                    options.precision,
+                    options.precision
                 )
             ];
         }
@@ -93,7 +93,7 @@ export class Polynomial extends Regression {
     }
 
     protected _derivative(x: number): number {
-        let coeffs: Array<number> = this.getCoefficients().reverse();
+        let coeffs: number[] = this.getCoefficients().reverse();
         let result: number = 0;
 
         for (let i: number = 1; i < coeffs.length; i++) {
@@ -114,7 +114,7 @@ export class Polynomial extends Regression {
     }
 
     public getEquation(): string {
-        let coefficients: Array<number> = this.getCoefficients().reverse();
+        let coefficients: number[] = this.getCoefficients().reverse();
         let string: string = 'y = ';
         for (let i: number = coefficients.length - 1; i >= 0; i--) {
             if (i > 1) {
@@ -177,7 +177,7 @@ export class Polynomial extends Regression {
      * but the super class will never use findX generically, so this is ok.
      */
     protected _findX(y: number, range?: IRangeOptions): number {
-        let coefficients: Array<number> = this.getCoefficients();
+        let coefficients: number[] = this.getCoefficients();
         let x: number = null;
         if (coefficients.length <= 2) {
             // This isn't a valid polynomial
@@ -203,7 +203,7 @@ export class Polynomial extends Regression {
                 }
             }
             
-            let coefficients: Array<number> = this.getCoefficients();
+            let coefficients: number[] = this.getCoefficients();
             coefficients[coefficients.length - 1] -= y;
             
             x = this.$newton(initialGuess, coefficients);
@@ -213,7 +213,7 @@ export class Polynomial extends Regression {
     }
 
     private $quadratic(y: number, range: IRangeOptions): number {
-        let coefficients: Array<number> = this.getCoefficients();
+        let coefficients: number[] = this.getCoefficients();
         coefficients[coefficients.length - 1] -= y;
 
         let a: number = coefficients[0];
@@ -231,7 +231,7 @@ export class Polynomial extends Regression {
             return this.$findExtrapolatedX(y, range);
         }
 
-        let possibilities: Array<number> = [ pResult, nResult ];
+        let possibilities: number[] = [ pResult, nResult ];
 
         if (!range.allowOutOfBounds) {
             possibilities = possibilities.filter((value: number): boolean => {
@@ -284,7 +284,7 @@ export class Polynomial extends Regression {
             return v >= -ACCEPTABLE_APPROX && v <= ACCEPTABLE_APPROX;
         };
 
-        let criticalPoints: Array<number> = [];
+        let criticalPoints: number[] = [];
         let firstDeriv: number = this.derivative(range.low);
         let isPositiveSlope: boolean = null;
         let offset: number = 0;
@@ -337,7 +337,7 @@ export class Polynomial extends Regression {
         return criticalPoint + xGuess;
     }
 
-    private $newton(x0: number, coefficients: Array<number>): number {
+    private $newton(x0: number, coefficients: number[]): number {
         let prevX: number = x0;
         let x: number = x0;
         let dx: number = x0;

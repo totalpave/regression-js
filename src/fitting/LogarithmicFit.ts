@@ -3,8 +3,8 @@ import IOptions from "../IOptions";
 import round from "../utils/round";
 
 export class LogarithmicFit extends FittingStrategy {
-    protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        let sum: Array<number> = [
+    protected _fit(data: number[][], options: IOptions): number[] {
+        let sum: number[] = [
             0,
             0,
             0,

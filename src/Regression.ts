@@ -3,18 +3,20 @@ import { DEFAULT_OPTIONS } from "./utils/defaults";
 import round from "./utils/round";
 import determineCoefficients from "./utils/determineCoefficients";
 import {
-    ISerializable,
     ICloneable,
+    ISerializable
+} from '@totalpave/interfaces';
+import {
     ObjectUtils
 } from '@totalpave/object';
 import {ISerializedRegression} from './utils/ISerializedRegression';
 import {RegressionType} from './utils/RegressionType';
 
-export abstract class Regression implements ISerializable, ICloneable<Regression> {
-    private $coefficients: Array<number>;
+export abstract class Regression implements ISerializable<string>, ICloneable<Regression> {
+    private $coefficients: number[];
     private $options: IOptions;
 
-    public constructor(coefficients: Array<number>, options?: IOptions) {
+    public constructor(coefficients: number[], options?: IOptions) {
         this.$options = {
             ...DEFAULT_OPTIONS,
             ...this._applyOptionDefaults(),
@@ -52,7 +54,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         return {};
     }
 
-    protected abstract _predict(x: number): Array<number>;
+    protected abstract _predict(x: number): number[];
     public abstract getType(): RegressionType;
     public abstract getEquation(): string;
     protected abstract _derivative(x: number): number;
@@ -71,7 +73,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         return ObjectUtils.clone(this.$options);
     }
 
-    public setCoefficients(coeffs: Array<number>): void {
+    public setCoefficients(coeffs: number[]): void {
         this.$coefficients = coeffs;
     }
     
@@ -79,7 +81,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         return this.$coefficients[index];
     }
 
-    public getCoefficients(): Array<number> {
+    public getCoefficients(): number[] {
         return this.$coefficients.slice();
     }
 
@@ -109,7 +111,7 @@ export abstract class Regression implements ISerializable, ICloneable<Regression
         return this.getEquation();
     }
 
-    public getFitAccuracy(data: Array<Array<number>>): number {
+    public getFitAccuracy(data: number[][]): number {
         return round(determineCoefficients(data, data.map(point => this._predict(point[0]))), this.$options.precision);
     }
 }

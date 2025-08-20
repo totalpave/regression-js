@@ -11,9 +11,9 @@ export abstract class FittingStrategy {
         };
     }
 
-    protected abstract _fit(data: Array<Array<number>>, options: IOptions): Array<number>;
+    protected abstract _fit(data: number[][], options: IOptions): number[];
 
-    public fit(data: Array<Array<number>>): Array<number> {
+    public fit(data: number[][]): number[] {
         return this._fit(data, this.$options);
     }
 }

@@ -7,7 +7,7 @@ import LinearFit from '../fitting/LinearFit';
 import RegressionType from '../utils/RegressionType';
 
 export class Linear extends Regression {
-    protected _predict(x: number): Array<number> {
+    protected _predict(x: number): number[] {
         let gradient: number = this.getCoefficientAt(0);
         let intercept: number = this.getCoefficientAt(1);
         let options: IOptions = this.getOptions();

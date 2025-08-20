@@ -14,7 +14,7 @@ describe('models', () => {
                 let example: any = models[model][name];
                 describe(name, () => {
                     it(`correct predicts ${name}`, () => {
-                        let fitResults: IBestFitResult = factory.bestFit(<RegressionType>model, example.data, example.config);
+                        let fitResults: IBestFitResult = factory.bestFit((model as RegressionType), example.data, example.config);
                         let regression: Regression = fitResults.regression;
                         expect(regression.getEquation()).toBe(example.string);
                         expect(regression.getCoefficients()).toEqual(example.equation);

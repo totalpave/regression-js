@@ -9,13 +9,13 @@ describe('RegressionFactory', () => {
 
     it('create "blah" should throw', () => {
         expect(() => {
-            factory.create(<RegressionType>'blah', [])
+            factory.create(('blah' as RegressionType), [])
         }).toThrow();
     });
 
     it('bestFit "blah" should throw', () => {
         expect(() => {
-            factory.bestFit<Linear>(<RegressionType>'blah', []);
+            factory.bestFit<Linear>(('blah' as RegressionType), []);
         }).toThrow();
     });
 

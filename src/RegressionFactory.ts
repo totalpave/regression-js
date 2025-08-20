@@ -20,7 +20,7 @@ export class RegressionFactory {
 
     public constructor() {}
 
-    public create<T extends Regression = Regression>(type: RegressionType, coefficients: Array<number>, options?: IOptions): T {
+    public create<T extends Regression = Regression>(type: RegressionType, coefficients: number[], options?: IOptions): T {
         let regression: any = null;
 
         switch (type) {
@@ -45,7 +45,7 @@ export class RegressionFactory {
         return regression;
     }
 
-    public bestFit<T extends Regression>(type: RegressionType, data: Array<Array<number>>, options?: IOptions): IBestFitResult<T> {
+    public bestFit<T extends Regression>(type: RegressionType, data: number[][], options?: IOptions): IBestFitResult<T> {
         let fitting: FittingStrategy = null;
         let regression: any = null;
 
@@ -81,7 +81,7 @@ export class RegressionFactory {
 
     public load<T extends Regression>(serialized: string): T {
         let serializable: ISerializedRegression = JSON.parse(serialized);
-        return this.create<T>(<RegressionType>serializable.type, <Array<number>>serializable.coefficients, <IOptions>serializable.options);
+        return this.create<T>(serializable.type, serializable.coefficients, serializable.options);
     }
 
     private $throwNotBuildable(type: RegressionType): void {

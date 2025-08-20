@@ -6,11 +6,11 @@ import FittingStrategy from "../fitting/FittingStrategy";
 import RegressionType from '../utils/RegressionType';
 
 export class Exponential extends Regression {
-    public constructor(coefficients: Array<number>, options?: IOptions) {
+    public constructor(coefficients: number[], options?: IOptions) {
         super(coefficients, options);
     }
 
-    protected _predict(x: number): Array<number> {
+    protected _predict(x: number): number[] {
         let options: IOptions = this.getOptions();
         let coeffA: number = this.getCoefficientAt(0);
         let coeffB: number = this.getCoefficientAt(1);

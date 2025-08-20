@@ -4,9 +4,9 @@ import gaussianElimination from "../utils/gaussianElimination";
 import round from "../utils/round";
 
 export class PolynomialFit extends FittingStrategy {
-    protected _fit(data: Array<Array<number>>, options: IOptions): Array<number> {
-        let lhs: Array<number> = [];
-        let rhs: Array<Array<number>> = [];
+    protected _fit(data: number[][], options: IOptions): number[] {
+        let lhs: number[] = [];
+        let rhs: number[][] = [];
         let a: number = 0;
         let b: number = 0;
         let len: number = data.length;
@@ -22,7 +22,7 @@ export class PolynomialFit extends FittingStrategy {
             lhs.push(a);
             a = 0;
 
-            let c: Array<number> = [];
+            let c: number[] = [];
             for (let j: number = 0; j < k; j++) {
                 for (let l: number = 0; l < len; l++) {
                     if (data[l][1] !== null) {
@@ -36,7 +36,7 @@ export class PolynomialFit extends FittingStrategy {
         }
         rhs.push(lhs);
 
-        let coefficients: Array<number> = gaussianElimination(rhs, k).map(v => round(v, options.precision));
+        let coefficients: number[] = gaussianElimination(rhs, k).map(v => round(v, options.precision));
         return coefficients.reverse();
     }
 }
